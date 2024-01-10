@@ -1,0 +1,27 @@
+{
+  "${modID}:Example": {
+    "TEXT": [
+      "This is",
+      "an array of Strings."
+    ],
+    "EXTRA_TEXT": [
+      "This is another",
+      "array of Strings."
+    ],
+    "TEXT_DICT": {
+      "This": "Contains pairs of Strings, used to get values based on keys.",
+      "This is a key": "This is a value."
+    }
+  },
+  "${modID}:GlobalityAction": {
+    "TEXT": [
+      "Choose cards to exhaust"
+    ]
+  },
+  "${modID}:EmptyHandAction": {
+    "TEXT": [
+      "Choose up to one card to discard",
+      "Choose any number of cards to discard"
+    ]
+  }
+}

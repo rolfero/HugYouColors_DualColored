@@ -1,0 +1,372 @@
+{
+  "${modID}:ExampleCard": {
+    "NAME": "Name",
+    "DESCRIPTION": "Description.",
+    "UPGRADE_DESCRIPTION": "If you change the constructor of your card to use super(cardInfo, true); this will be the card's description when it is upgraded.",
+    "EXTENDED_DESCRIPTION": [
+      "You can put more text in here.",
+      "If you need to use it for stuff.",
+      "Blizzard is a good example for this."
+    ]
+  },
+  "${modID}:Duck": {
+    "NAME": "Duck",
+    "DESCRIPTION": "Gain !B! Block twice."
+  },
+  "${modID}:ShivStrike": {
+    "NAME": "Shiv Strike",
+    "DESCRIPTION": "{@@}Deal !D! damage {!Upgrades!|0=twice.|1=three times.}"
+  },
+  "${modID}:OakenShield": {
+    "NAME": "Oaken Shield",
+    "DESCRIPTION": "Gain !B! Block. NL Can be upgraded any number of times."
+  },
+  "${modID}:Training": {
+    "NAME": "Training",
+    "DESCRIPTION": "Gain !M! Strength and !M! Dexterity."
+  },
+  "${modID}:OpportunityStrike": {
+    "NAME": "Opportunity Strike",
+    "DESCRIPTION": "Deal !D! damage. NL Gain !B! Block. NL Ethereal."
+  },
+  "${modID}:KnifeArtisan": {
+    "NAME": "Knife Artisan",
+    "DESCRIPTION": "Gain 1 Strength. NL Add !M! Shivs to your hand. NL Exhaust."
+  },
+  "${modID}:WindUp": {
+    "NAME": "Wind Up",
+    "DESCRIPTION": "{@@}Upgrade the next {!M!|>1=!M! |@=}card{!M!|>1=s|@=} you play this turn. NL Draw a card."
+  },
+  "${modID}:BreakFingers": {
+    "NAME": "Break Fingers",
+    "DESCRIPTION": "Deal !D! damage. NL If the target has Weak, apply !M! Weak."
+  },
+  "${modID}:Beatdown": {
+    "NAME": "Beatdown",
+    "DESCRIPTION": "{@@}Deal !D! damage, then deal half that damage.{!Location!|0= NL (!HugYouColors:HalfDamage!)}"
+  },
+  "${modID}:Trek": {
+    "NAME": "Trek",
+    "DESCRIPTION": "Add a *Slimed to your hand. NL Gain !B! Block and draw a card."
+  },
+  "${modID}:FingerPunch": {
+    "NAME": "Finger Punch",
+    "DESCRIPTION": "Deal !D! damage. Damage dealt is increased by Dexterity."
+  },
+  "${modID}:Gusto": {
+    "NAME": "Gusto",
+    "DESCRIPTION": "Gain !M! Strength. NL Discard a card, then draw a random card of the same type."
+  },
+  "${modID}:StayOnTarget": {
+    "NAME": "Stay on Target",
+    "DESCRIPTION": "Whenever you discard or Exhaust a card, gain !M! Strength until the end of your turn."
+  },
+  "${modID}:VenomDirk": {
+    "NAME": "Venom Dirk",
+    "DESCRIPTION": "Deal !D! damage. NL Apply poison equal to unblocked damage."
+  },
+  "${modID}:Toxicity": {
+    "NAME": "Toxicity",
+    "DESCRIPTION": "Whenever you deal damage with an attack, the target loses health equal to their total Poison, Weak, and Vulnerable."
+  },
+  "${modID}:Raid": {
+    "NAME": "Raid",
+    "DESCRIPTION": "Deal !D! damage. NL Increase the cost of this card by !M! this combat."
+  },
+  "${modID}:Impede": {
+    "NAME": "Impede",
+    "DESCRIPTION": "Gain !B! Block. NL Increase the cost of this card by !M! this combat."
+  },
+  "${modID}:Oppress": {
+    "NAME": "Oppress",
+    "DESCRIPTION": "Deal !D! damage. NL If the enemy does not intend to attack, apply !M! Vulnerable."
+  },
+  "${modID}:Build": {
+    "NAME": "Build",
+    "DESCRIPTION": "Whenever you play a Power card, gain !M! Strength."
+  },
+  "${modID}:Inventory": {
+    "NAME": "Inventory",
+    "DESCRIPTION": "{@@}Draw X cards and gain X Orb slots. {!Upgrades!|0=NL Exhaust.}"
+  },
+  "${modID}:VoltaicBolt": {
+    "NAME": "Voltaic Bolt",
+    "DESCRIPTION": "Deal !D! damage. NL Channel !M! Lightning."
+  },
+  "${modID}:Pinpoint": {
+    "NAME": "Pinpoint",
+    "DESCRIPTION": "Gain !M! Focus until the end of your turn."
+  },
+  "${modID}:Converge": {
+    "NAME": "Converge",
+    "DESCRIPTION": "Gain !B! Block for each enemy in combat."
+  },
+  "${modID}:EnergySword": {
+    "NAME": "Energy Sword",
+    "DESCRIPTION": "Deal !D! damage. NL Costs 1 less [E] for each Power you've played this combat."
+  },
+  "${modID}:ColdSphere": {
+    "NAME": "Cold Sphere",
+    "DESCRIPTION": "{@@}Gain an Orb Slot. NL Channel !M! Frost. {!Upgrades!|0=NL Ethereal.}"
+  },
+  "${modID}:Bionic": {
+    "NAME": "Bionic",
+    "DESCRIPTION": "Strength and Dexterity affect your Orbs. NL Focus affect cards damage and Block."
+  },
+  "${modID}:CenterStrike": {
+    "NAME": "Center Strike",
+    "DESCRIPTION": "{@@}Deal !D! damage. NL Damage is affected by your Focus{!Upgrades!|1= twice}."
+  },
+  "${modID}:Singularity": {
+    "NAME": "Singularity",
+    "DESCRIPTION": "{@@}Gain [E] [E] {!Upgrades!|1=[E] }and draw !M! cards. NL Add a Void, Burn and Wound to your discard pile."
+  },
+  "${modID}:Globality": {
+    "NAME": "Globality",
+    "DESCRIPTION": "Exhaust any number of cards in your hand. Draw that many cards and gain [E] equal to their cost."
+  },
+  "${modID}:Productivity": {
+    "NAME": "Productivity",
+    "DESCRIPTION": "{@@}{!Upgrades!|0=The first time|1=Whenever} you play a Power card{!Upgrades!|0= each turn}, gain !M! Focus.{!Upgrades!|0= Ethereal.}"
+  },
+  "${modID}:Shielded": {
+    "NAME": "Shielded",
+    "DESCRIPTION": "Gain !B! Block."
+  },
+  "${modID}:Pillar": {
+    "NAME": "Pillar",
+    "DESCRIPTION": "Retain. NL Deal !D! damage."
+  },
+  "${modID}:FiredUp": {
+    "NAME": "Fired Up",
+    "DESCRIPTION": "Your next Attack deals !M! additional damage."
+  },
+  "${modID}:Denial": {
+    "NAME": "Denial",
+    "DESCRIPTION": "Deal !D! damage. NL Discard a card."
+  },
+  "${modID}:BetterThanSorry": {
+    "NAME": "Better Than Sorry",
+    "DESCRIPTION": "{@@}Add !M! *Safety{!Upgrades!|1=+} to your hand."
+  },
+  "${modID}:ToTheHeretics": {
+    "NAME": "To The Heretics",
+    "DESCRIPTION": "{@@}Add !M! *Smite{!Upgrades!|1=+} to your hand."
+  },
+  "${modID}:Heed": {
+    "NAME": "Heed",
+    "DESCRIPTION": "Gain !B! Block. NL Enter Calm."
+  },
+  "${modID}:Spasm": {
+    "NAME": "Spasm",
+    "DESCRIPTION": "Deal !D! damage. NL If you are in Calm, exit your Stance."
+  },
+  "${modID}:ReadInBlood": {
+    "NAME": "Read in Blood",
+    "DESCRIPTION": "Lose 1 HP. NL Scry !M!."
+  },
+  "${modID}:Develop": {
+    "NAME": "Develop",
+    "DESCRIPTION": "{@@}Add a *Smite{!Upgrades!|1=+} and *Safety{!Upgrades!|1=+} to your hand."
+  },
+  "${modID}:Percussion": {
+    "NAME": "Percussion",
+    "DESCRIPTION": "Deal !D! damage. Gain Block equal to unblocked damage dealt."
+  },
+  "${modID}:Soulforged": {
+    "NAME": "Soulforged",
+    "DESCRIPTION": "Deal !D! damage. NL Deals twice as much damage for the rest of the combat. NL Ethereal."
+  },
+  "${modID}:HiddenEye": {
+    "NAME": "Hidden Eye",
+    "DESCRIPTION": "{@@}Add an *Insight{!Upgrades!|1=+} to your hand."
+  },
+  "${modID}:Regulate": {
+    "NAME": "Regulate",
+    "DESCRIPTION": "{@@}Enter Wrath or Calm.{!Upgrades!|0= NL Exhaust.}"
+  },
+  "${modID}:Drain": {
+    "NAME": "Drain",
+    "DESCRIPTION": "Apply !M! Weak and !M! Vulnerable."
+  },
+  "${modID}:Load": {
+    "NAME": "Load",
+    "DESCRIPTION": "Deal !D! damage. NL Retain."
+  },
+  "${modID}:Memento": {
+    "NAME": "Memento",
+    "DESCRIPTION": "Gain !M! Artifact. NL Exhaust."
+  },
+  "${modID}:Counterbalance": {
+    "NAME": "Counterbalance",
+    "DESCRIPTION": "Deal !D! damage. NL Retain your hand this turn."
+  },
+  "${modID}:Arctic": {
+    "NAME": "Arctic",
+    "DESCRIPTION": "Enter Calm. NL Channel !M! Frost."
+  },
+  "${modID}:Charged": {
+    "NAME": "Charged",
+    "DESCRIPTION": "Enter Wrath. NL Channel !M! Lightning."
+  },
+  "${modID}:Plethora": {
+    "NAME": "Plethora",
+    "DESCRIPTION": "{@@}Retain. NL Draw {!M!|1=a|>1=!M!} card{!M!|>1=s}. NL When Retained, increase draw by {!Upgrades!|0=1|1=2} this combat."
+  },
+  "${modID}:Breach": {
+    "NAME": "Breach",
+    "DESCRIPTION": "{@@}Put {!Upgrades!|1=up to }{!M!|1=a|@=!M!} card{!M!|>1=s} from your draw pile to your discard pile. NL Draw a card."
+  },
+  "${modID}:TargetedBlast": {
+    "NAME": "Targeted Blast",
+    "DESCRIPTION": "Deal !D! damage to the enemy with lowest health."
+  },
+  "${modID}:Tower": {
+    "NAME": "Tower",
+    "DESCRIPTION": "{@@}Deal damage equal to the number of cards in your discard pile{!Upgrades!|1= +3}.{!Location!|0,1,2,3= NL (Deals !D! damage.)}"
+  },
+  "${modID}:LostBacteria": {
+    "NAME": "Lost Bacteria",
+    "DESCRIPTION": "Apply !M! Poison to all enemies. NL Channel a Frost."
+  },
+  "${modID}:Steal": {
+    "NAME": "Steal",
+    "DESCRIPTION": "{@@}Draw !M! cards. NL Increase this cards draw by 1 permanently. NL Exhaust."
+  },
+  "${modID}:Bounce": {
+    "NAME": "Bounce",
+    "DESCRIPTION": "Deal !D! damage. NL Gain [E] for each card you have discarded this turn."
+  },
+  "${modID}:Leaves": {
+    "NAME": "Leaves",
+    "DESCRIPTION": "Deal !D! damage to a random enemy twice."
+  },
+  "${modID}:Propel": {
+    "NAME": "Propel",
+    "DESCRIPTION": "Deal !D! damage to all enemies. NL Shuffle an *Insight into your draw pile."
+  },
+  "${modID}:OpenStrike": {
+    "NAME": "Open Strike",
+    "DESCRIPTION": "Deal !D! damage. NL Scry !M!."
+  },
+  "${modID}:Stockpile": {
+    "NAME": "Stockpile",
+    "DESCRIPTION": "Give a card in your hand Retain for the rest of combat."
+  },
+  "${modID}:FlaringStrike": {
+    "NAME": "Flaring Strike",
+    "DESCRIPTION": "Deal !D! damage. NL If you are in Wrath, exit your Stance. Otherwise, enter Wrath."
+  },
+  "${modID}:Outplay": {
+    "NAME": "Outplay",
+    "DESCRIPTION": "Deal !D! damage and apply !M! *Mark. NL Deals double damage to *Marked enemies."
+  },
+  "${modID}:Bloodlust": {
+    "NAME": "Bloodlust",
+    "DESCRIPTION": "Retain. NL Enter Wrath and gain !M! Strength. NL When Retained, increase cost by 1 this combat."
+  },
+  "${modID}:Rustling": {
+    "NAME": "Rustling",
+    "DESCRIPTION": "Retain. NL Deal !D! damage !M! times. NL Whenever you change Stance, reduce cost by 1 this combat."
+  },
+  "${modID}:Progression": {
+    "NAME": "Progression",
+    "DESCRIPTION": "At the start of your turn, Upgrade a random card in your hand."
+  },
+  "${modID}:Accord": {
+    "NAME": "Accord",
+    "DESCRIPTION": "Deal !D! damage. NL If you are in a Stance, hugyoucolors:Sync."
+  },
+  "${modID}:Synchronization": {
+    "NAME": "Synchronization",
+    "DESCRIPTION": "At the end of your turn, hugyoucolors:Sync."
+  },
+  "${modID}:Splash": {
+    "NAME": "Splash",
+    "DESCRIPTION": "Deal !D! damage. NL Whenever an Orb is Evoked, return this from your discard pile to your hand."
+  },
+  "${modID}:Stratagem": {
+    "NAME": "Stratagem",
+    "DESCRIPTION": "{@@}At the start of your turn, add a *Smite{!Upgrades!|0= or |1=, }*Safety{!Upgrades!|1= or *Insight} to your hand."
+  },
+  "${modID}:Gambit": {
+    "NAME": "Gambit",
+    "DESCRIPTION": "Put all cards in your draw pile with cost 0 in your hand. NL Deal !D! damage for each card drawn."
+  },
+  "${modID}:Database": {
+    "NAME": "Database",
+    "DESCRIPTION": "Gain Focus equal to the amount of cards in your hand until the end of your turn."
+  },
+  "${modID}:Import": {
+    "NAME": "Import",
+    "DESCRIPTION": "{@@}Choose 1 of 3 Powers of any color to add to your hand.{!Upgrades!|1= NL It costs 0 this turn.} NL Exhaust."
+  },
+  "${modID}:TheSkyIsTheLimit": {
+    "NAME": "The Sky Is The Limit",
+    "DESCRIPTION": "{@@}Your next Attack deals double damage.{!Upgrades!|0= NL Exhaust.|1=}"
+  },
+  "${modID}:Clever": {
+    "NAME": "Clever",
+    "DESCRIPTION": "Draw !M! cards. NL They cost 1 less this turn."
+  },
+  "${modID}:Levitate": {
+    "NAME": "Levitate",
+    "DESCRIPTION": "Discard any amount of cards at the start of your turn, and trigger your right-most Orbs passive for each discard."
+  },
+  "${modID}:Negotiate": {
+    "NAME": "Negotiate",
+    "DESCRIPTION": "{@@}Draw {!M!|1=a|>1=!M!} card{!M!|>1=s}. NL Gain {!M!|1=an|>1=!M!} Orb slot{!M!|>1=s}. NL Apply !M! Weak. NL Gain [E] [E] ."
+  },
+  "${modID}:Memorized": {
+    "NAME": "Memorized",
+    "DESCRIPTION": "{@@}Draw !M! card{!M!|>1=s}. NL Costs 1 additional [E] for each time you lose HP this combat."
+  },
+  "${modID}:Assassinate": {
+    "NAME": "Assassinate",
+    "DESCRIPTION": "Channel !M! Dark. NL Deal !D! damage for each Dark orb. NL Exhaust."
+  },
+  "${modID}:Slipping": {
+    "NAME": "Slipping",
+    "DESCRIPTION": "{@@}{!Upgrades!|1=Retain. NL }At the start of your turn, gain !M! Dexterity. NL This card starts in your discard pile.{!Upgrades!|0= NL Ethereal.}"
+  },
+  "${modID}:Archeology": {
+    "NAME": "Archeology",
+    "DESCRIPTION": "At the start of your turn, shuffle all *Claws from your discard pile into your draw pile. If there are none, instead add a *Claw into your discard pile."
+  },
+  "${modID}:Blight": {
+    "NAME": "Blight",
+    "DESCRIPTION": "Apply !M! *Mark. NL ALL enemies gain Poison equal to their *Mark."
+  },
+  "${modID}:DoNotWorry": {
+    "NAME": "Do Not Worry",
+    "DESCRIPTION": "Discard your hand. NL Enter Calm. NL Gain !B! Block."
+  },
+  "${modID}:EmptyHand": {
+    "NAME": "Empty Hand",
+    "DESCRIPTION": "{@@}Discard {!Upgrades!|0=up to one|1=any number of} card{!Upgrades!|1=s}. If you do, draw {!Upgrades!|0=a|1=that many} card{!Upgrades!|1=s}. NL Exit your Stance."
+  },
+  "${modID}:Perfect": {
+    "NAME": "Perfect",
+    "DESCRIPTION": "Retain. NL Enter Divinity. NL Exhaust."
+  },
+  "${modID}:Torrent": {
+    "NAME": "Torrent",
+    "DESCRIPTION": "Retain. NL Deal !D! damage. NL When Retained, add a copy of this card to your hand. NL Exhaust."
+  },
+  "${modID}:RoughUp": {
+    "NAME": "Rough Up",
+    "DESCRIPTION": "Deal !D! damage. NL Discard !M! cards."
+  },
+  "${modID}:FashionBlade": {
+    "NAME": "Fashion Blade",
+    "DESCRIPTION": "{@@}Add X Shivs to your hand. NL Your Shivs deal !M!X more damage."
+  },
+  "${modID}:FinalStrike": {
+    "NAME": "Final Strike",
+    "DESCRIPTION": "Apply !M! *Mark. NL For each *Mark on the enemy, deal !D! damage. NL Exhaust."
+  },
+  "${modID}:Torture": {
+    "NAME": "Torture",
+    "DESCRIPTION": "Enter Wrath. NL While in Wrath, you apply and suffer double debuffs."
+  }
+}
