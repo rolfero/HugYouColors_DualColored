@@ -73,11 +73,9 @@ public class SubColorMenu {
             return Color.DARK_GRAY;
         }
         return null;
-        //TODO: Should return the color of the row, or null if its unchanged I guess. So, if its disabled for some reason, maybe color it? Or color the colors?
     }
 
     public void chooseColor(int i) {
-        //TODO: What actually happens when you choose something in the dropdown menu?
         if (isChosenCharacter(i)) {
             if (dropdown.rows.size() > 1) {
                 if (currentChoice == i && i == 0) {

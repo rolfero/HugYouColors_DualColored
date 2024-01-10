@@ -23,5 +23,35 @@
       "Choose up to one card to discard",
       "Choose any number of cards to discard"
     ]
+  },
+  "${modID}:LevitateAction": {
+    "TEXT": [
+      "discard and trigger the right-most orbs passive for each card!"
+    ]
+  },
+  "${modID}:ImportAction": {
+    "TEXT": [
+      "Choose a Power"
+    ]
+  },
+  "${modID}:GiveRetainAction": {
+    "TEXT": [
+      "retain this combat."
+    ]
+  },
+  "${modID}:DiscardDrawTypeAction": {
+    "TEXT": [
+      "discard."
+    ]
+  },
+  "${modID}:ChooseMakeTempInHandAction": {
+    "TEXT": [
+      "Add a card to your hand."
+    ]
+  },
+  "${modID}:BreachAction": {
+    "TEXT": [
+      "Choose cards to discard"
+    ]
   }
 }

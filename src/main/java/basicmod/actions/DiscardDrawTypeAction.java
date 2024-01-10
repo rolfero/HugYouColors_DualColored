@@ -1,19 +1,23 @@
 package basicmod.actions;
 
+import basicmod.BasicMod;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.actions.utility.DrawPileToHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.localization.UIStrings;
 
-@SuppressWarnings("ALL")
+@SuppressWarnings("unused")
 public class DiscardDrawTypeAction extends AbstractGameAction {
+    private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(BasicMod.makeID("DiscardDrawTypeAction"));
+    private static final String[] TEXT = uiStrings.TEXT;
 
     final AbstractPlayer p;
 
-    @SuppressWarnings("unused")
     public DiscardDrawTypeAction() {
         this.duration = Settings.ACTION_DUR_FAST;
         p = AbstractDungeon.player;
@@ -40,7 +44,7 @@ public class DiscardDrawTypeAction extends AbstractGameAction {
                 this.isDone = true;
                 return;
             } else {
-                AbstractDungeon.handCardSelectScreen.open("discard.", 1, false);//TODO: Localize the text
+                AbstractDungeon.handCardSelectScreen.open(TEXT[0], 1, false);
                 this.tickDuration();
                 return;
             }

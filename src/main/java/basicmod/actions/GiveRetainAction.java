@@ -2,16 +2,21 @@ package basicmod.actions;
 
 import basemod.cardmods.RetainMod;
 import basemod.helpers.CardModifierManager;
+import basicmod.BasicMod;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.localization.UIStrings;
 
 import java.util.ArrayList;
 
 @SuppressWarnings("ALL")
 public class GiveRetainAction extends AbstractGameAction {
+    private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(BasicMod.makeID("GiveRetainAction"));
+    private static final String[] TEXT = uiStrings.TEXT;
 
     final AbstractPlayer p;
     private final ArrayList<AbstractCard> cannotRetain = new ArrayList<>();
@@ -70,7 +75,7 @@ public class GiveRetainAction extends AbstractGameAction {
                     return;
                 }
 
-                AbstractDungeon.handCardSelectScreen.open("retain this combat.", 1, false); //TODO: Localize the text
+                AbstractDungeon.handCardSelectScreen.open(TEXT[0], 1, false);
                 this.tickDuration();
                 return;
             }

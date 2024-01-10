@@ -1,23 +1,25 @@
 package basicmod.actions;
 
+import basicmod.BasicMod;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.localization.UIStrings;
 
 import java.util.ArrayList;
 
-@SuppressWarnings("ALL")
+@SuppressWarnings("unused")
 public class ChooseMakeTempInHandAction extends AbstractGameAction {
+    private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(BasicMod.makeID("ChooseMakeTempInHandAction"));
+    private static final String[] TEXT = uiStrings.TEXT;
 
-    @SuppressWarnings("unused")
     final AbstractPlayer p;
     final ArrayList<AbstractCard> choices;
 
-    @SuppressWarnings("unused")
     public ChooseMakeTempInHandAction(ArrayList<AbstractCard> cards) {
         this.duration = Settings.ACTION_DUR_FAST;
         p = AbstractDungeon.player;
@@ -25,7 +27,6 @@ public class ChooseMakeTempInHandAction extends AbstractGameAction {
         this.choices = cards;
     }
 
-    @SuppressWarnings("unused")
     @Override
     public void update() {
         AbstractCard c;
@@ -35,11 +36,7 @@ public class ChooseMakeTempInHandAction extends AbstractGameAction {
                 return;
             }
 
-            CardGroup chooseGroup = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
-            chooseGroup.group = choices;
-
-            AbstractDungeon.cardRewardScreen.customCombatOpen(choices, "Add a card to your hand.", false); //TODO: Localize
-
+            AbstractDungeon.cardRewardScreen.customCombatOpen(choices, TEXT[0], false);
 
         } else {
             addToTop( new MakeTempCardInHandAction(AbstractDungeon.cardRewardScreen.discoveryCard) );

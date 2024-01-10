@@ -6,10 +6,9 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-@SuppressWarnings("ALL") //TODO: why ALL warnings???
 public class ArcheologyPower extends BasePower {
 
-    public static final String ID = BasicMod.makeID("ArcheologyPower"); //TODO: Fix all power localization/give them descriptions
+    public static final String ID = BasicMod.makeID("ArcheologyPower");
 
     @SuppressWarnings("unused")
     public static final Logger logger = LogManager.getLogger(BasicMod.modID); //Used to output to the console.

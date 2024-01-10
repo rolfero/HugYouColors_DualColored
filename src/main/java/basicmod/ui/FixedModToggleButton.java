@@ -16,7 +16,7 @@ import com.megacrit.cardcrawl.helpers.input.InputHelper;
 import java.util.function.Consumer;
 
 // This class is a near-copy of the BaseMod class, changed to use Settings.xScale and Settings.yScale
-@SuppressWarnings("ALL")
+@SuppressWarnings("unused")
 public class FixedModToggleButton implements IUIElement {
     private static final float TOGGLE_Y_DELTA = 0f;
     private static final float TOGGLE_X_EXTEND = 12.0f;

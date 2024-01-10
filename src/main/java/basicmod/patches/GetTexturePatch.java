@@ -19,7 +19,6 @@ public class GetTexturePatch {
         @SuppressWarnings("unused")
         public static SpireReturn<Texture> Prefix(AbstractCard.CardColor color) {
             //Check if its a dual color, return the dual color texture modified and all!
-            //TODO: How do I get the "normal" texture?
             if (color.equals(CARD_DUAL_RG_COLOR)) {
                 return SpireReturn.Return(RED_GREEN_DUAL_TEXTURE_SKILL);
             } else if (color.equals(CARD_DUAL_RB_COLOR)) {
@@ -44,7 +43,6 @@ public class GetTexturePatch {
         @SuppressWarnings("unused")
         public static SpireReturn<Texture> Prefix(AbstractCard.CardColor color) {
             //Check if its a dual color, return the dual color texture modified and all!
-            //TODO: How do I get the "normal" texture?
             if (color.equals(CARD_DUAL_RG_COLOR)) {
                 return SpireReturn.Return(RED_GREEN_DUAL_TEXTURE_ATTACK);
             } else if (color.equals(CARD_DUAL_RB_COLOR)) {
@@ -69,7 +67,6 @@ public class GetTexturePatch {
         @SuppressWarnings("unused")
         public static SpireReturn<Texture> Prefix(AbstractCard.CardColor color) {
             //Check if its a dual color, return the dual color texture modified and all!
-            //TODO: How do I get the "normal" texture?
             if (color.equals(CARD_DUAL_RG_COLOR)) {
                 return SpireReturn.Return(RED_GREEN_DUAL_TEXTURE_POWER);
             } else if (color.equals(CARD_DUAL_RB_COLOR)) {
@@ -94,7 +91,6 @@ public class GetTexturePatch {
         @SuppressWarnings("unused")
         public static SpireReturn<Texture> Prefix(AbstractCard.CardColor color) {
             //Check if its a dual color, return the dual color texture modified and all!
-            //TODO: How do I get the "normal" texture?
             if (color.equals(CARD_DUAL_RG_COLOR)) {
                 return SpireReturn.Return(RED_GREEN_DUAL_TEXTURE_ATTACK_L);
             } else if (color.equals(CARD_DUAL_RB_COLOR)) {
@@ -119,7 +115,6 @@ public class GetTexturePatch {
         @SuppressWarnings("unused")
         public static SpireReturn<Texture> Prefix(AbstractCard.CardColor color) {
             //Check if its a dual color, return the dual color texture modified and all!
-            //TODO: How do I get the "normal" texture?
             if (color.equals(CARD_DUAL_RG_COLOR)) {
                 return SpireReturn.Return(RED_GREEN_DUAL_TEXTURE_SKILL_L);
             } else if (color.equals(CARD_DUAL_RB_COLOR)) {
@@ -144,7 +139,6 @@ public class GetTexturePatch {
         @SuppressWarnings("unused")
         public static SpireReturn<Texture> Prefix(AbstractCard.CardColor color) {
             //Check if its a dual color, return the dual color texture modified and all!
-            //TODO: How do I get the "normal" texture?
             if (color.equals(CARD_DUAL_RG_COLOR)) {
                 return SpireReturn.Return(RED_GREEN_DUAL_TEXTURE_POWER_L);
             } else if (color.equals(CARD_DUAL_RB_COLOR)) {

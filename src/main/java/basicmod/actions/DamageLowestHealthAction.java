@@ -7,13 +7,12 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-@SuppressWarnings("ALL")
+@SuppressWarnings("unused")
 public class DamageLowestHealthAction extends AbstractGameAction {
 
     private final DamageInfo damageInfo;
     private final AttackEffect attackEffect;
 
-    @SuppressWarnings("unused")
     public DamageLowestHealthAction(DamageInfo info, AttackEffect effect) {
 
         damageInfo = info;

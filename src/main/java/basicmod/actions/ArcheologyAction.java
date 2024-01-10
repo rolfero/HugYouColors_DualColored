@@ -8,10 +8,8 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 import java.util.ArrayList;
 
-@SuppressWarnings("ALL")
 public class ArcheologyAction extends AbstractGameAction {
 
-    @SuppressWarnings("unused")
     public ArcheologyAction(int amt) {
         this.amount = amt;
     }

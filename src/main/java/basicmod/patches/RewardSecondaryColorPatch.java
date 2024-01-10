@@ -13,7 +13,6 @@ import static basicmod.BasicMod.*;
 public class RewardSecondaryColorPatch {
 
     private static final int PRIMARY_CHANCE = 75; //chance in % to get the primary color. Otherwise, its secondary color.
-    //TODO: Decide on the final chance distribution between primary and secondary color!
 
     @SpirePatch(
             clz = AbstractDungeon.class,

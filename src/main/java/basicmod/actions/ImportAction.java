@@ -1,10 +1,13 @@
 package basicmod.actions;
 
+import basicmod.BasicMod;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
+import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToDiscardEffect;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToHandEffect;
 
@@ -12,6 +15,8 @@ import java.util.ArrayList;
 
 @SuppressWarnings("ALL")
 public class ImportAction extends AbstractGameAction {
+    private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(BasicMod.makeID("ImportAction"));
+    private static final String[] TEXT = uiStrings.TEXT;
     private boolean retrieveCard = false;
     private final boolean upgraded;
 
@@ -24,7 +29,7 @@ public class ImportAction extends AbstractGameAction {
 
     public void update() {
         if (this.duration == Settings.ACTION_DUR_FAST) {
-            AbstractDungeon.cardRewardScreen.customCombatOpen(this.generateCardChoices(), "HYC: Choose a Power", true); //TODO: Localize it!
+            AbstractDungeon.cardRewardScreen.customCombatOpen(this.generateCardChoices(), TEXT[0], true);
             this.tickDuration();
         } else {
             if (!this.retrieveCard) {

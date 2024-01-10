@@ -44,7 +44,7 @@ import java.util.*;
 
 import static com.megacrit.cardcrawl.helpers.ImageMaster.*;
 
-@SuppressWarnings("ALL")
+@SuppressWarnings("unused")
 @SpireInitializer
 public class BasicMod implements
         EditStringsSubscriber,
@@ -167,14 +167,14 @@ public class BasicMod implements
          *
          * I want to try with example 4.
          *
-         * TODO: Allow you to pick your subcolor - DONE.
-         *  TODO: Save the subcolor (either base color or modded character) somehow. This needs to be a savable! Probably a string of either modid:name or The Silent etc
-         *  TODO: -> skew card reward probability based on it. DONE.
-         *   TODO:   Card reward probability probably like: 60% primary, 20% dual, 20% secondary.
+         * DONE: Allow you to pick your subcolor - DONE.
+         *  DONE: Save the subcolor (either base color or modded character) somehow. This needs to be a savable! Probably a string of either modid:name or The Silent etc.
+         *  DONE: -> skew card reward probability based on it. DONE.
+         *   DONE:   Card reward probability probably like: 60% primary, 20% dual, 20% secondary.
          *          maybe more like 75% primary, 25% secondary - with both the primary and secondary card pool including the dual cards, which means they have a slightly bigger chance of occuring compared to any other singular card.
-         * TODO: Add DUAL COLOR CARDS to the game.
-         * TODO: Make DUAL COLOR CARDS come up if you chose the appropriate colors.
-         * TODO: Add COLOR cards to the game.
+         * DONE: Add DUAL COLOR CARDS to the game.
+         * DONE: Make DUAL COLOR CARDS come up if you chose the appropriate colors.
+         * SCRAPPED: Add COLOR cards to the game.
          *
          *
          *
@@ -252,7 +252,6 @@ public class BasicMod implements
 
         ArrayList<AbstractCard> tmpPool = new ArrayList<>();
 
-        //TODO: Replace with correct colors
         CardLibrary.addCardsIntoPool(tmpPool, Enums.CARD_DUAL_RG_COLOR);
         CardLibrary.addCardsIntoPool(tmpPool, Enums.CARD_DUAL_RB_COLOR);
         CardLibrary.addCardsIntoPool(tmpPool, Enums.CARD_DUAL_GB_COLOR);
@@ -297,8 +296,8 @@ public class BasicMod implements
             texture1.getTexture().getTextureData().prepare();
 
         Pixmap pixmap = new Pixmap(
-                (int)texture1.originalWidth,
-                (int)texture1.originalHeight,
+                texture1.originalWidth,
+                texture1.originalHeight,
                 texture1.getTexture().getTextureData().getFormat()
         );
 

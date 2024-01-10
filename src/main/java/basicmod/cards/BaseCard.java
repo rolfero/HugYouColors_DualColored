@@ -18,7 +18,6 @@ import static basicmod.BasicMod.makeID;
 import static basicmod.util.TextureLoader.getCardTextureString;
 
 
-@SuppressWarnings("ALL")
 public abstract class BaseCard extends CustomCard {
     final private static Map<String, DynamicVariable> customVars = new HashMap<>();
 

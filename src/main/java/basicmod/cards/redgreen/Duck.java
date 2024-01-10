@@ -39,6 +39,5 @@ public class Duck extends DualCard {
         for (int i = 0; i < magicNumber; ++i) {
             addToBot(new GainBlockAction(p, block));
         }
-        //TODO: Grafisk effekt där man duckar?
     }
 }

@@ -1,19 +1,23 @@
 package basicmod.actions;
 
+import basicmod.BasicMod;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.localization.UIStrings;
 
-@SuppressWarnings("ALL")
+@SuppressWarnings("unused")
 public class BreachAction extends AbstractGameAction {
+    private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(BasicMod.makeID("BreachAction"));
+    private static final String[] TEXT = uiStrings.TEXT;
 
-    private boolean chooseAny = false;
+    private final boolean chooseAny;
     private final AbstractPlayer p;
 
-    @SuppressWarnings("unused")
     public BreachAction(AbstractPlayer p, boolean chooseAny, int amount) {
         this.p = p;
         this.chooseAny = chooseAny;
@@ -22,8 +26,6 @@ public class BreachAction extends AbstractGameAction {
 
         this.amount = amount;
     }
-
-    //TODO: Needs to show the card "going" to the discard pile.
 
     @Override
     public void update() {
@@ -47,19 +49,18 @@ public class BreachAction extends AbstractGameAction {
                 if (tmp.size() <= this.amount) {
                     //choose all cards
                     for (AbstractCard c : tmp.group) {
-                        //TODO: Show this?
                         this.p.drawPile.moveToDiscardPile(c);
                     }
                     this.isDone = true;
                     return;
 
                 } else {
-                    AbstractDungeon.gridSelectScreen.open(tmp, this.amount, "Choose cards to discard", false); //TODO: Localize this text
+                    AbstractDungeon.gridSelectScreen.open(tmp, this.amount, TEXT[0], false);
                     this.tickDuration();
                 }
 
             } else {
-                AbstractDungeon.gridSelectScreen.open(tmp, this.amount, true, "Choose cards to discard"); //TODO: Localize this text
+                AbstractDungeon.gridSelectScreen.open(tmp, this.amount, true, TEXT[0]);
                 this.tickDuration();
             }
 

@@ -1,15 +1,20 @@
 package basicmod.actions;
 
+import basicmod.BasicMod;
 import com.evacipated.cardcrawl.mod.stslib.actions.defect.TriggerPassiveAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.localization.UIStrings;
 
 @SuppressWarnings("ALL")
 public class LevitateAction extends AbstractGameAction {
+    private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(BasicMod.makeID("LevitateAction"));
+    private static final String[] TEXT = uiStrings.TEXT;
 
     final AbstractPlayer p;
 
@@ -31,7 +36,7 @@ public class LevitateAction extends AbstractGameAction {
                 this.isDone = true;
                 return;
             } else {
-                AbstractDungeon.handCardSelectScreen.open("discard and trigger the right-most orbs passive for each card!", 10, true);//TODO: Localize the text
+                AbstractDungeon.handCardSelectScreen.open(TEXT[0], 10, true);
                 this.tickDuration();
                 return;
             }
