@@ -14,21 +14,21 @@ import com.megacrit.cardcrawl.screens.options.DropdownMenu;
 
 import java.util.ArrayList;
 
-@SuppressWarnings("ALL")
+
 public class SubColorMenu {
 
     private static float DROPDOWN_X = 200.0f * Settings.scale;
     private static float DROPDOWN_Y = Settings.HEIGHT - 255.0f * Settings.scale;
-    @SuppressWarnings("unused")
+    
     private static final float CHECK_X = 200.0f * Settings.scale;
-    @SuppressWarnings("unused")
+    
     private static final float CHECK_Y = Settings.HEIGHT - 255.0f * Settings.scale;
 
     public DropdownMenu dropdown;
     public int currentChoice;
     public CharacterSelectScreen characterSelectScreen;
 
-    @SuppressWarnings("unused")
+    
     public SubColorMenu() {
         currentChoice = 0;
     }

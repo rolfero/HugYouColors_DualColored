@@ -10,7 +10,6 @@ import com.megacrit.cardcrawl.powers.AccuracyPower;
 import com.megacrit.cardcrawl.relics.ChemicalX;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 
-@SuppressWarnings("ALL")
 public class FashionBladeAction extends AbstractGameAction {
 
     private boolean freeToPlayOnce = false;
@@ -19,7 +18,7 @@ public class FashionBladeAction extends AbstractGameAction {
 
     private final int accMult;
 
-    @SuppressWarnings("unused")
+    
     public FashionBladeAction(AbstractPlayer p, boolean freeToPlayOnce, int energyOnUse, int accuracyMultiplier) {
         this.p = p;
         this.freeToPlayOnce = freeToPlayOnce;

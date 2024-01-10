@@ -7,7 +7,7 @@ import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
-@SuppressWarnings("unused")
+
 public class CleverFollowUpAction extends AbstractGameAction {
 
     public CleverFollowUpAction(int reduction) {

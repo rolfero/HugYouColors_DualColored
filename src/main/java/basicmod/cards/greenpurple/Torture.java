@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.stances.WrathStance;
 
 import static basicmod.BasicMod.makeID;
 
-@SuppressWarnings("ALL")
+
 public class Torture extends DualCard {
 
     //Add X(+1) Shivs into your hand. Your shivs deal X (+1) more damage.
@@ -25,10 +25,10 @@ public class Torture extends DualCard {
             BasicMod.Enums.CARD_DUAL_GP_COLOR //BasicMod.Enums.CARD_DUAL_GR_COLOR //The card color. If you're making your own character, it'll look something like this. Otherwise, it'll be CardColor.RED or something similar for a basegame character color.
     );
 
-    @SuppressWarnings("unused")
+
     public static final String ID = makeID(cardInfo.baseId);
 
-    @SuppressWarnings("unused")
+
     public Torture() {
         super(cardInfo, CardColor.GREEN, CardColor.PURPLE); //change this to super(cardInfo, true); for updating description
         setCostUpgrade(1);

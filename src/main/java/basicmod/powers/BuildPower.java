@@ -7,12 +7,12 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 
-@SuppressWarnings("ALL")
+
 public class BuildPower extends BasePower {
 
     private static final String ID = BasicMod.makeID("BuildPower");
 
-    @SuppressWarnings("unused")
+    
     public BuildPower(AbstractCreature owner, int amt) {
         super(ID, PowerType.BUFF, false, owner, null, amt);
     }

@@ -10,7 +10,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static basicmod.BasicMod.makeID;
 
-@SuppressWarnings("ALL")
 public class Breach extends DualCard {
     private final static CardInfo cardInfo = new CardInfo(
             "Breach", //Card ID. Will be prefixed with mod id, so the final ID will be "modID:MyCard" with whatever your mod's ID is.
@@ -21,13 +20,13 @@ public class Breach extends DualCard {
             BasicMod.Enums.CARD_DUAL_GB_COLOR //BasicMod.Enums.CARD_DUAL_GR_COLOR //The card color. If you're making your own character, it'll look something like this. Otherwise, it'll be CardColor.RED or something similar for a basegame character color.
     );
 
-    @SuppressWarnings("unused")
+    
     public static final String ID = makeID(cardInfo.baseId);
     private static final int MAGIC = 1;
     private static final int UPG_MAGIC = 2;
     private static final int CARDDRAW = 1;
 
-    @SuppressWarnings("unused")
+    
     public Breach() {
         super(cardInfo, CardColor.GREEN, CardColor.BLUE); //change this to super(cardInfo, true); for updating description
         setMagic(MAGIC, UPG_MAGIC);

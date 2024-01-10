@@ -11,7 +11,7 @@ import javassist.CtBehavior;
 
 import java.util.ArrayList;
 
-@SuppressWarnings("ALL")
+
 @SpirePatch(
         clz = AbstractPlayer.class,
         method = "channelOrb"
@@ -22,7 +22,7 @@ public class ChannelHookPatch {
         default void triggerOnChannel(AbstractOrb orb) {} //the weird name is mostly to avoid name conflicts
     }
 
-    @SuppressWarnings("unused")
+    
     @SpireInsertPatch(
         locator = Locator.class
     )
@@ -50,7 +50,7 @@ public class ChannelHookPatch {
         }
     }
 
-    @SuppressWarnings("unused")
+    
     private static class Locator extends SpireInsertLocator {
         public int[] Locate(CtBehavior ctMethodToPatch) throws CannotCompileException, PatchingException {
             Matcher finalMatcher = new Matcher.FieldAccessMatcher(GameActionManager.class, "orbsChanneledThisCombat");

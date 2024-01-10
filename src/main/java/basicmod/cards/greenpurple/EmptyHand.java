@@ -11,7 +11,6 @@ import com.megacrit.cardcrawl.stances.NeutralStance;
 
 import static basicmod.BasicMod.makeID;
 
-@SuppressWarnings("ALL")
 public class EmptyHand extends DualCard {
 
     // Discard up to one (any number of) card(s). If you do, draw a (that many) card(s). Exit your stance.
@@ -24,10 +23,10 @@ public class EmptyHand extends DualCard {
             BasicMod.Enums.CARD_DUAL_GP_COLOR //BasicMod.Enums.CARD_DUAL_GR_COLOR //The card color. If you're making your own character, it'll look something like this. Otherwise, it'll be CardColor.RED or something similar for a basegame character color.
     );
 
-    @SuppressWarnings("unused")
+    
     public static final String ID = makeID(cardInfo.baseId);
 
-    @SuppressWarnings("unused")
+    
     public EmptyHand() {
         super(cardInfo, CardColor.GREEN, CardColor.PURPLE); //change this to super(cardInfo, true); for updating description
     }

@@ -44,7 +44,7 @@ import java.util.*;
 
 import static com.megacrit.cardcrawl.helpers.ImageMaster.*;
 
-@SuppressWarnings("unused")
+
 @SpireInitializer
 public class BasicMod implements
         EditStringsSubscriber,
@@ -67,40 +67,40 @@ public class BasicMod implements
     }
 
     public static class Enums {
-        @SuppressWarnings("unused")
+        
         @SpireEnum(name = "Green and red")
         public static AbstractCard.CardColor CARD_DUAL_RG_COLOR;
-        @SuppressWarnings("unused")
+        
         @SpireEnum(name = "Green and red")
         public static CardLibrary.LibraryType LIBRARY_DUAL_RG_COLOR;
-        @SuppressWarnings("unused")
+        
         @SpireEnum(name = "Red and blue")
         public static AbstractCard.CardColor CARD_DUAL_RB_COLOR;
-        @SuppressWarnings("unused")
+        
         @SpireEnum(name = "Red and blue")
         public static CardLibrary.LibraryType LIBRARY_DUAL_RB_COLOR;
-        @SuppressWarnings("unused")
+        
         @SpireEnum(name = "Green and blue")
         public static AbstractCard.CardColor CARD_DUAL_GB_COLOR;
-        @SuppressWarnings("unused")
+        
         @SpireEnum(name = "Green and blue")
         public static CardLibrary.LibraryType LIBRARY_DUAL_GB_COLOR;
-        @SuppressWarnings("unused")
+        
         @SpireEnum(name = "Green and purple")
         public static AbstractCard.CardColor CARD_DUAL_GP_COLOR;
-        @SuppressWarnings("unused")
+        
         @SpireEnum(name = "Green and purple")
         public static CardLibrary.LibraryType LIBRARY_DUAL_GP_COLOR;
-        @SuppressWarnings("unused")
+        
         @SpireEnum(name = "Red and purple")
         public static AbstractCard.CardColor CARD_DUAL_RP_COLOR;
-        @SuppressWarnings("unused")
+        
         @SpireEnum(name = "Red and purple")
         public static CardLibrary.LibraryType LIBRARY_DUAL_RP_COLOR;
-        @SuppressWarnings("unused")
+        
         @SpireEnum(name = "Blue and purple")
         public static AbstractCard.CardColor CARD_DUAL_BP_COLOR;
-        @SuppressWarnings("unused")
+        
         @SpireEnum(name = "Blue and purple")
         public static CardLibrary.LibraryType LIBRARY_DUAL_BP_COLOR;
     }
@@ -116,7 +116,7 @@ public class BasicMod implements
     private static final String SMALL_ORB = characterPath("cardback/small_orb.png");
 
     //This will be called by ModTheSpire because of the @SpireInitializer annotation at the top of the class.
-    @SuppressWarnings("unused")
+    
     public static void initialize() {
         new BasicMod();
         BaseMod.addColor(Enums.CARD_DUAL_RG_COLOR, Color.WHITE,
@@ -145,7 +145,7 @@ public class BasicMod implements
                 SMALL_ORB);
     }
 
-    @SuppressWarnings("unused")
+    
     public BasicMod() {
         BaseMod.subscribe(this); //This will make BaseMod trigger all the subscribers at their appropriate times.
         logger.info(modID + " subscribed to BaseMod.");
@@ -187,7 +187,7 @@ public class BasicMod implements
 
     public static AbstractPlayer playerSecondary;
 
-    @SuppressWarnings("unused")
+    
     public static AbstractPlayer.PlayerClass getSecondaryClass() {
         return playerSecondary.chosenClass;
     }

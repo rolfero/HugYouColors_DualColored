@@ -16,7 +16,7 @@ import com.megacrit.cardcrawl.helpers.input.InputHelper;
 import java.util.function.Consumer;
 
 // This class is a near-copy of the BaseMod class, changed to use Settings.xScale and Settings.yScale
-@SuppressWarnings("unused")
+
 public class FixedModToggleButton implements IUIElement {
     private static final float TOGGLE_Y_DELTA = 0f;
     private static final float TOGGLE_X_EXTEND = 12.0f;
@@ -31,15 +31,15 @@ public class FixedModToggleButton implements IUIElement {
     private final boolean extendedHitbox;
 
     public boolean enabled;
-    @SuppressWarnings("unused")
+
     public final ModPanel parent;
 
-    @SuppressWarnings("unused")
+
     public FixedModToggleButton(float xPos, float yPos, ModPanel p, Consumer<FixedModToggleButton> c) {
         this(xPos, yPos, false, true, p, c);
     }
 
-    @SuppressWarnings("unused")
+
     public FixedModToggleButton(float xPos, float yPos, boolean enabled, boolean extendedHitbox, ModPanel p, Consumer<FixedModToggleButton> c) {
         x = xPos * Settings.xScale;
         y = yPos * Settings.yScale;
@@ -60,7 +60,7 @@ public class FixedModToggleButton implements IUIElement {
         toggle = c;
     }
 
-    @SuppressWarnings("unused")
+
     public void wrapHitboxToText(String text, float lineWidth, float lineSpacing, BitmapFont font) {
         float tWidth = FontHelper.getSmartWidth(font, text, lineWidth, lineSpacing);
         hb.width = tWidth + h * Settings.xScale + TOGGLE_X_EXTEND;
@@ -107,7 +107,6 @@ public class FixedModToggleButton implements IUIElement {
         toggle.accept(this);
     }
 
-    @SuppressWarnings("unused")
     public void toggle() {
         onToggle();
     }

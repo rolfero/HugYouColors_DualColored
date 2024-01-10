@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static basicmod.BasicMod.makeID;
 
-@SuppressWarnings("ALL")
+
 public class Toxicity extends DualCard {
     private final static CardInfo cardInfo = new CardInfo(
             "Toxicity", //Card ID. Will be prefixed with mod id, so the final ID will be "modID:MyCard" with whatever your mod's ID is.
@@ -21,10 +21,10 @@ public class Toxicity extends DualCard {
             BasicMod.Enums.CARD_DUAL_RG_COLOR //BasicMod.Enums.CARD_DUAL_GR_COLOR //The card color. If you're making your own character, it'll look something like this. Otherwise, it'll be CardColor.RED or something similar for a basegame character color.
     );
 
-    @SuppressWarnings("unused")
+    
     public static final String ID = makeID(cardInfo.baseId);
 
-    @SuppressWarnings("unused")
+    
     public Toxicity() {
         super(cardInfo, CardColor.RED, CardColor.GREEN); //change this to super(cardInfo, true); for updating description
         setCostUpgrade(1);

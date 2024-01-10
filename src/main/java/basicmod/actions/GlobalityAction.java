@@ -14,7 +14,6 @@ import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 
 import java.util.Iterator;
 
-@SuppressWarnings("ALL")
 public class GlobalityAction extends AbstractGameAction {
 
     //Exhaust any number of cards in your hand. Draw that many cards and gain energy equal to their cost.
@@ -23,7 +22,7 @@ public class GlobalityAction extends AbstractGameAction {
     private static final String[] TEXT = uiStrings.TEXT;
 
 
-    @SuppressWarnings("unused")
+    
     public GlobalityAction() {
         this.duration = Settings.ACTION_DUR_FAST;
         this.actionType = ActionType.CARD_MANIPULATION;

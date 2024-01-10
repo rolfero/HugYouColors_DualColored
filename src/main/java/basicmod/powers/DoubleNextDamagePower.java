@@ -8,12 +8,12 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-@SuppressWarnings("ALL")
+
 public class DoubleNextDamagePower extends BasePower {
 
     private static final String ID = BasicMod.makeID("DoubleNextDamagePower");
 
-    @SuppressWarnings("unused")
+
     public DoubleNextDamagePower(AbstractCreature owner, int amount) {
         super(ID, PowerType.BUFF, false, owner, null, amount);
     }

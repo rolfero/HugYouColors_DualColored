@@ -15,7 +15,7 @@ import com.megacrit.cardcrawl.powers.AccuracyPower;
 
 import static basicmod.BasicMod.makeID;
 
-@SuppressWarnings("ALL")
+
 public class ShivStrike extends DualCard {
     private final static CardInfo cardInfo = new CardInfo(
             "ShivStrike", //Card ID. Will be prefixed with mod id, so the final ID will be "modID:MyCard" with whatever your mod's ID is.
@@ -26,14 +26,14 @@ public class ShivStrike extends DualCard {
             BasicMod.Enums.CARD_DUAL_RG_COLOR //BasicMod.Enums.CARD_DUAL_GR_COLOR //The card color. If you're making your own character, it'll look something like this. Otherwise, it'll be CardColor.RED or something similar for a basegame character color.
     );
 
-    @SuppressWarnings("unused")
+    
     public static final String ID = makeID(cardInfo.baseId);
 
     private static final int DAMAGE = 2;
     private static final int UPG_MAGIC = 1;
     private static final int MAGIC = 2;
 
-    @SuppressWarnings("unused")
+    
     public ShivStrike() {
         super(cardInfo, CardColor.RED, CardColor.GREEN); //change this to super(cardInfo, true); for updating description
         setDamage(DAMAGE);
@@ -50,7 +50,7 @@ public class ShivStrike extends DualCard {
             method = "updateExistingShivs"
     )
     public static class AccuracyPatch {
-        @SuppressWarnings("unused")
+        
         public static void Prefix(AccuracyPower __instance) {
             for (AbstractCard c : AbstractDungeon.player.hand.group) {
                 if (c instanceof ShivStrike) {
@@ -80,7 +80,7 @@ public class ShivStrike extends DualCard {
             method = "onDrawOrDiscard"
     )
     public static class AccuracyDrawPatch {
-        @SuppressWarnings("unused")
+        
         public static void Prefix(AccuracyPower __instance) {
             for (AbstractCard c : AbstractDungeon.player.hand.group) {
                 if (c instanceof ShivStrike) {

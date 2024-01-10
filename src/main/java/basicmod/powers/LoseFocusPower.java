@@ -6,12 +6,12 @@ import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.powers.FocusPower;
 
-@SuppressWarnings("ALL")
+
 public class LoseFocusPower extends BasePower {
 
     private static final String ID = BasicMod.makeID("LoseFocusPower");
 
-    @SuppressWarnings("unused")
+
     public LoseFocusPower(AbstractCreature owner, int amt) {
         super(ID, PowerType.DEBUFF, false, owner, null, amt);
     }

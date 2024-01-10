@@ -7,12 +7,12 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-@SuppressWarnings("ALL")
+
 public class UpgradeNextPlayedCardPower extends BasePower {
 
     private static final String ID = BasicMod.makeID("UpgradeNextPlayedCardPower");
 
-    @SuppressWarnings("unused")
+
     public UpgradeNextPlayedCardPower(AbstractCreature owner, int amount) {
         super(ID, PowerType.BUFF, false, owner, null, amount);
     }

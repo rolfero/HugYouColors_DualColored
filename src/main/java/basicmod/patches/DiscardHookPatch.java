@@ -6,7 +6,7 @@ import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
-@SuppressWarnings("ALL")
+
 @SpirePatch(
         clz = GameActionManager.class,
         method = "incrementDiscard"
@@ -16,7 +16,7 @@ public class DiscardHookPatch {
         void onManualDiscard(); //the weird name is mostly to avoid name conflicts
     }
 
-    @SuppressWarnings("unused")
+    
     @SpirePostfixPatch
     public static void onManualDiscard(boolean endOfTurn) {
         if (!AbstractDungeon.actionManager.turnHasEnded && !endOfTurn) {

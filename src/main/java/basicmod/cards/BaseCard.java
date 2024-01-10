@@ -48,17 +48,17 @@ public abstract class BaseCard extends CustomCard {
 
     final protected Map<String, LocalVarInfo> cardVariables = new HashMap<>();
 
-    @SuppressWarnings("unused")
+    
     public BaseCard(CardInfo cardInfo) {
         this(cardInfo.baseId, cardInfo.baseCost, cardInfo.cardType, cardInfo.cardTarget, cardInfo.cardRarity, cardInfo.cardColor);
     }
-    @SuppressWarnings("unused")
+    
     public BaseCard(CardInfo cardInfo, boolean upgradesDescription)
     {
         this(cardInfo.baseId, cardInfo.baseCost, cardInfo.cardType, cardInfo.cardTarget, cardInfo.cardRarity, cardInfo.cardColor, upgradesDescription);
     }
 
-    @SuppressWarnings("unused")
+    
     public BaseCard(String baseID, int cost, CardType cardType, CardTarget target, CardRarity rarity, CardColor color)
     {
         super(makeID(baseID), "", getCardTextureString(baseID, cardType), cost, "", cardType, color, rarity, target);
@@ -82,7 +82,7 @@ public abstract class BaseCard extends CustomCard {
         initializeDescription();
     }
 
-    @SuppressWarnings("unused")
+    
     public BaseCard(String cardName, int cost, CardType cardType, CardTarget target, CardRarity rarity, CardColor color, boolean upgradesDescription)
     {
         super(makeID(cardName), "", getCardTextureString(cardName, cardType), cost, "", cardType, color, rarity, target);
@@ -129,7 +129,7 @@ public abstract class BaseCard extends CustomCard {
         }
     }
 
-    @SuppressWarnings("unused")
+    
     protected final void setBlock(int block)
     {
         this.setBlock(block, 0);
@@ -158,7 +158,7 @@ public abstract class BaseCard extends CustomCard {
         }
     }
 
-    @SuppressWarnings("unused")
+    
     protected final void setCustomVar(String key, int base) {
         this.setCustomVar(key, base, 0);
     }
@@ -175,7 +175,7 @@ public abstract class BaseCard extends CustomCard {
         return cardVariables.get(key);
     }
 
-    @SuppressWarnings("unused")
+    
     protected void calculateVarAsDamage(String key) {
         setVarCalculation(key, (m, base)->{
             int tmp = this.baseDamage;
@@ -190,7 +190,7 @@ public abstract class BaseCard extends CustomCard {
             return damage;
         });
     }
-    @SuppressWarnings("unused")
+    
     protected void calculateVarAsBlock(String key) {
         setVarCalculation(key, (m, base)->{
             int tmp = this.baseBlock;
@@ -244,7 +244,7 @@ public abstract class BaseCard extends CustomCard {
     protected final void setExhaust(boolean exhaust) { this.setExhaust(exhaust, exhaust); }
     @SuppressWarnings("SameParameterValue")
     protected final void setEthereal(boolean ethereal) { this.setEthereal(ethereal, ethereal); }
-    @SuppressWarnings("unused")
+    
     protected final void setInnate(boolean innate) {this.setInnate(innate, innate); }
     @SuppressWarnings("SameParameterValue")
     protected final void setSelfRetain(boolean retain) {this.setSelfRetain(retain, retain); }
@@ -417,7 +417,7 @@ public abstract class BaseCard extends CustomCard {
     private static class QuickDynamicVariable extends DynamicVariable {
         final String localKey, key;
 
-        @SuppressWarnings("unused")
+        
         public QuickDynamicVariable(String key) {
             this.localKey = key;
             this.key = makeID(key);
@@ -466,13 +466,13 @@ public abstract class BaseCard extends CustomCard {
 
         BiFunction<AbstractMonster, Integer, Integer> calculation = LocalVarInfo::noCalc;
 
-        @SuppressWarnings("unused")
+        
         public LocalVarInfo(int base, int upgrade) {
             this.base = this.value = base;
             this.upgrade = upgrade;
         }
 
-        @SuppressWarnings("unused")
+        
         private static int noCalc(AbstractMonster m, int base) {
             return base;
         }

@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.UIStrings;
 
-@SuppressWarnings("unused")
+
 public class DiscardDrawTypeAction extends AbstractGameAction {
     private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(BasicMod.makeID("DiscardDrawTypeAction"));
     private static final String[] TEXT = uiStrings.TEXT;

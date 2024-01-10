@@ -10,12 +10,12 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 
 import java.util.ArrayList;
 
-@SuppressWarnings("ALL")
+
 public class StratagemUpgradedPower extends BasePower {
 
     public static final String ID = BasicMod.makeID("StratagemUpgradedPower");
 
-    @SuppressWarnings("unused")
+
     public StratagemUpgradedPower(AbstractCreature owner, int amount) {
         super(ID, PowerType.BUFF, false, owner, null, amount);
     }

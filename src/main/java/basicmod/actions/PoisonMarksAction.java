@@ -8,10 +8,9 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.PoisonPower;
 import com.megacrit.cardcrawl.powers.watcher.MarkPower;
 
-@SuppressWarnings("ALL")
 public class PoisonMarksAction extends AbstractGameAction {
 
-    @SuppressWarnings("unused")
+
     public PoisonMarksAction() {
         this.duration = Settings.ACTION_DUR_FAST;
     }

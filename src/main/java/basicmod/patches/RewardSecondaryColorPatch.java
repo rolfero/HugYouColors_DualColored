@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.random.Random;
 
 import static basicmod.BasicMod.*;
 
-@SuppressWarnings("ALL")
+
 public class RewardSecondaryColorPatch {
 
     private static final int PRIMARY_CHANCE = 75; //chance in % to get the primary color. Otherwise, its secondary color.
@@ -20,8 +20,8 @@ public class RewardSecondaryColorPatch {
             paramtypez = {AbstractCard.CardRarity.class, Random.class}
     )
     public static class RewardCards1 {
-        @SuppressWarnings("unused")
-        private static SpireReturn<AbstractCard> Prefix(AbstractCard.CardRarity rarity, Random rng) {
+
+        public static SpireReturn<AbstractCard> Prefix(AbstractCard.CardRarity rarity, Random rng) {
             if (rng.random(99) >= (100-PRIMARY_CHANCE)) return SpireReturn.Continue();
 
             switch (rarity) {
@@ -46,8 +46,8 @@ public class RewardSecondaryColorPatch {
             paramtypez = {AbstractCard.CardRarity.class}
     )
     public static class RewardCards2 {
-        @SuppressWarnings("unused")
-        private static SpireReturn<AbstractCard> Prefix(AbstractCard.CardRarity rarity) {
+
+        public static SpireReturn<AbstractCard> Prefix(AbstractCard.CardRarity rarity) {
             if (AbstractDungeon.cardRng.random(99) >= (100-PRIMARY_CHANCE)) return SpireReturn.Continue();
 
             switch (rarity) {
@@ -71,8 +71,8 @@ public class RewardSecondaryColorPatch {
             method = "getCardWithoutRng"
     )
     public static class RewardCards3 {
-        @SuppressWarnings("unused")
-        private static SpireReturn<AbstractCard> Prefix(AbstractCard.CardRarity rarity) {
+
+        public static SpireReturn<AbstractCard> Prefix(AbstractCard.CardRarity rarity) {
             if (MathUtils.random(99) >= (100-PRIMARY_CHANCE)) return SpireReturn.Continue();
 
             switch (rarity) {
@@ -130,8 +130,8 @@ public class RewardSecondaryColorPatch {
             method = "getCardFromPool"
     )
     public static class RewardCards4 {
-        @SuppressWarnings("unused")
-        private static SpireReturn<AbstractCard> Prefix(AbstractCard.CardRarity rarity, AbstractCard.CardType type, boolean useRng) {
+
+        public static SpireReturn<AbstractCard> Prefix(AbstractCard.CardRarity rarity, AbstractCard.CardType type, boolean useRng) {
 
             if (rarity == AbstractCard.CardRarity.CURSE) return SpireReturn.Continue();
 

@@ -11,11 +11,11 @@ import javassist.CtBehavior;
 
 import java.util.ArrayList;
 
-@SuppressWarnings("ALL")
+
 public class EvokeHookPatch {
     public interface OnEvokeHook {
         default void onEvoke(AbstractOrb orb) {} //the weird name is mostly to avoid name conflicts
-        @SuppressWarnings("unused")
+
         default void triggerOnEvoke(AbstractOrb orb) {} //the weird name is mostly to avoid name conflicts
     }
 
@@ -48,7 +48,7 @@ public class EvokeHookPatch {
             method = "evokeOrb"
     )
     public static class EvokeOrbPatch {
-        @SuppressWarnings("unused")
+
         @SpireInsertPatch(
                 locator = Locator.class
         )
@@ -57,7 +57,7 @@ public class EvokeHookPatch {
         }
     }
 
-    @SuppressWarnings("unused")
+
     private static class Locator extends SpireInsertLocator {
         public int[] Locate(CtBehavior ctMethodToPatch) throws CannotCompileException, PatchingException {
             Matcher finalMatcher = new Matcher.NewExprMatcher(EmptyOrbSlot.class);
@@ -70,7 +70,7 @@ public class EvokeHookPatch {
             method = "evokeNewestOrb"
     )
     public static class EvokeNewestOrbPatch {
-        @SuppressWarnings("unused")
+
         public static void Postfix(AbstractPlayer __instance) {
             if (!__instance.orbs.isEmpty() && !(__instance.orbs.get(__instance.orbs.size() - 1) instanceof EmptyOrbSlot))
                 CallEvokeHook(__instance, __instance.orbs.get(__instance.orbs.size() - 1));
@@ -82,7 +82,7 @@ public class EvokeHookPatch {
             method = "evokeWithoutLosingOrb"
     )
     public static class EvokeWithoutLosingOrbPatch {
-        @SuppressWarnings("unused")
+
         public static void Postfix(AbstractPlayer __instance) {
             if (!__instance.orbs.isEmpty() && !(__instance.orbs.get(0) instanceof EmptyOrbSlot))
                 CallEvokeHook(__instance, __instance.orbs.get(0));

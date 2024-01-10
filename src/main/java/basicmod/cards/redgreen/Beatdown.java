@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static basicmod.BasicMod.makeID;
 
-@SuppressWarnings("ALL")
+
 public class Beatdown extends DualCard {
     private final static CardInfo cardInfo = new CardInfo(
             "Beatdown", //Card ID. Will be prefixed with mod id, so the final ID will be "modID:MyCard" with whatever your mod's ID is.
@@ -22,12 +22,12 @@ public class Beatdown extends DualCard {
             BasicMod.Enums.CARD_DUAL_RG_COLOR //BasicMod.Enums.CARD_DUAL_GR_COLOR //The card color. If you're making your own character, it'll look something like this. Otherwise, it'll be CardColor.RED or something similar for a basegame character color.
     );
 
-    @SuppressWarnings("unused")
+    
     public static final String ID = makeID(cardInfo.baseId);
     private static final int DAMAGE = 7;
     private static final int UPG_DAMAGE = 3;
 
-    @SuppressWarnings("unused")
+    
     public Beatdown() {
         super(cardInfo, CardColor.RED, CardColor.GREEN); //change this to super(cardInfo, true); for updating description
         setDamage(DAMAGE, UPG_DAMAGE);

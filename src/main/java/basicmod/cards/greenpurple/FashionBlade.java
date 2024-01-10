@@ -9,7 +9,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static basicmod.BasicMod.makeID;
 
-@SuppressWarnings("ALL")
 public class FashionBlade extends DualCard {
 
     //Add X(+1) Shivs into your hand. Your shivs deal X (+1) more damage.
@@ -22,13 +21,13 @@ public class FashionBlade extends DualCard {
             BasicMod.Enums.CARD_DUAL_GP_COLOR //BasicMod.Enums.CARD_DUAL_GR_COLOR //The card color. If you're making your own character, it'll look something like this. Otherwise, it'll be CardColor.RED or something similar for a basegame character color.
     );
 
-    @SuppressWarnings("unused")
+
     public static final String ID = makeID(cardInfo.baseId);
 
     private static final int MAGIC = 2;
     private static final int UPG_MAGIC = 1;
 
-    @SuppressWarnings("unused")
+
     public FashionBlade() {
         super(cardInfo, CardColor.GREEN, CardColor.PURPLE); //change this to super(cardInfo, true); for updating description
         setMagic(MAGIC, UPG_MAGIC);

@@ -13,7 +13,6 @@ import com.megacrit.cardcrawl.powers.EquilibriumPower;
 
 import static basicmod.BasicMod.makeID;
 
-@SuppressWarnings("ALL")
 public class Counterbalance extends DualCard {
     private final static CardInfo cardInfo = new CardInfo(
             "Counterbalance", //Card ID. Will be prefixed with mod id, so the final ID will be "modID:MyCard" with whatever your mod's ID is.
@@ -24,14 +23,14 @@ public class Counterbalance extends DualCard {
             BasicMod.Enums.CARD_DUAL_BP_COLOR //BasicMod.Enums.CARD_DUAL_GR_COLOR //The card color. If you're making your own character, it'll look something like this. Otherwise, it'll be CardColor.RED or something similar for a basegame character color.
     );
 
-    @SuppressWarnings("unused")
+    
     public static final String ID = makeID(cardInfo.baseId);
 
     private static final int DAMAGE = 13;
     private static final int UPG_DAMAGE = 4;
     private static final int MAGIC = 1;
 
-    @SuppressWarnings("unused")
+    
     public Counterbalance() {
         super(cardInfo, CardColor.BLUE, CardColor.PURPLE); //change this to super(cardInfo, true); for updating description
         setDamage(DAMAGE, UPG_DAMAGE);

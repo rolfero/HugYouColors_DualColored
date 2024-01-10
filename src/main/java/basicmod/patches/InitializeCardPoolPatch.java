@@ -11,7 +11,7 @@ public class InitializeCardPoolPatch {
             method = "initializeCardPools"
     )
     public static class SecondaryInitializeCardPool {
-        @SuppressWarnings("unused")
+        
         public static void Postfix() {
             BasicMod.initializeSecondaryCardPools();
             BasicMod.initializeDualCardPools();

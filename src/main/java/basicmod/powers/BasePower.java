@@ -8,29 +8,29 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
-@SuppressWarnings("ALL")
+
 public abstract class BasePower extends AbstractPower {
     private static PowerStrings getPowerStrings(String ID)
     {
         return CardCrawlGame.languagePack.getPowerStrings(ID);
     }
-    @SuppressWarnings("unused")
+    
     protected final AbstractCreature source;
     protected final String[] DESCRIPTIONS;
 
-    @SuppressWarnings("unused")
+    
     public BasePower(String id, PowerType powerType, boolean isTurnBased, AbstractCreature owner, int amount) {
         this(id, powerType, isTurnBased, owner, null, amount);
     }
-    @SuppressWarnings("unused")
+    
     public BasePower(String id, PowerType powerType, boolean isTurnBased, AbstractCreature owner, AbstractCreature source, int amount) {
         this(id, powerType, isTurnBased, owner, source, amount, true);
     }
-    @SuppressWarnings("unused")
+    
     public BasePower(String id, PowerType powerType, boolean isTurnBased, AbstractCreature owner, AbstractCreature source, int amount, boolean initDescription) {
         this(id, powerType, isTurnBased, owner, source, amount, initDescription, true);
     }
-    @SuppressWarnings("unused")
+    
     public BasePower(String id, PowerType powerType, boolean isTurnBased, AbstractCreature owner, AbstractCreature source, int amount, boolean initDescription, boolean loadImage) {
         this.ID = id;
         this.isTurnBased = isTurnBased;

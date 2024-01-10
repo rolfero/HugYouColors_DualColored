@@ -16,7 +16,7 @@ public class GetTexturePatch {
             method = "getSkillBgTexture"
     )
     public static class SkillBgTexturePatch {
-        @SuppressWarnings("unused")
+        
         public static SpireReturn<Texture> Prefix(AbstractCard.CardColor color) {
             //Check if its a dual color, return the dual color texture modified and all!
             if (color.equals(CARD_DUAL_RG_COLOR)) {
@@ -40,7 +40,7 @@ public class GetTexturePatch {
             method = "getAttackBgTexture"
     )
     public static class AttackBgTexturePatch {
-        @SuppressWarnings("unused")
+        
         public static SpireReturn<Texture> Prefix(AbstractCard.CardColor color) {
             //Check if its a dual color, return the dual color texture modified and all!
             if (color.equals(CARD_DUAL_RG_COLOR)) {
@@ -64,7 +64,7 @@ public class GetTexturePatch {
             method = "getPowerBgTexture"
     )
     public static class PowerBgTexturePatch {
-        @SuppressWarnings("unused")
+        
         public static SpireReturn<Texture> Prefix(AbstractCard.CardColor color) {
             //Check if its a dual color, return the dual color texture modified and all!
             if (color.equals(CARD_DUAL_RG_COLOR)) {
@@ -88,7 +88,7 @@ public class GetTexturePatch {
             method = "getAttackBgPortraitTexture"
     )
     public static class AttackBgPortraitTexturePatch {
-        @SuppressWarnings("unused")
+        
         public static SpireReturn<Texture> Prefix(AbstractCard.CardColor color) {
             //Check if its a dual color, return the dual color texture modified and all!
             if (color.equals(CARD_DUAL_RG_COLOR)) {
@@ -112,7 +112,7 @@ public class GetTexturePatch {
             method = "getSkillBgPortraitTexture"
     )
     public static class SkillBgPortraitTexturePatch {
-        @SuppressWarnings("unused")
+        
         public static SpireReturn<Texture> Prefix(AbstractCard.CardColor color) {
             //Check if its a dual color, return the dual color texture modified and all!
             if (color.equals(CARD_DUAL_RG_COLOR)) {
@@ -136,7 +136,7 @@ public class GetTexturePatch {
             method = "getPowerBgPortraitTexture"
     )
     public static class PowerBgPortraitTexturePatch {
-        @SuppressWarnings("unused")
+        
         public static SpireReturn<Texture> Prefix(AbstractCard.CardColor color) {
             //Check if its a dual color, return the dual color texture modified and all!
             if (color.equals(CARD_DUAL_RG_COLOR)) {

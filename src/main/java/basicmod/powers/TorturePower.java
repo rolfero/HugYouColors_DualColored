@@ -7,12 +7,12 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.stances.WrathStance;
 
-@SuppressWarnings("ALL")
+
 public class TorturePower extends BasePower implements BetterOnApplyPowerPower {
 
     private static final String ID = BasicMod.makeID("TorturePower");
 
-    @SuppressWarnings("unused")
+
     public TorturePower(AbstractCreature owner) {
         super(ID, PowerType.BUFF, false, owner, null, -1);
     }

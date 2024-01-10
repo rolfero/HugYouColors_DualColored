@@ -12,24 +12,21 @@ import com.megacrit.cardcrawl.localization.UIStrings;
 
 import java.util.ArrayList;
 
-@SuppressWarnings("unused")
+
 public class ChooseMakeTempInHandAction extends AbstractGameAction {
     private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(BasicMod.makeID("ChooseMakeTempInHandAction"));
     private static final String[] TEXT = uiStrings.TEXT;
 
-    final AbstractPlayer p;
     final ArrayList<AbstractCard> choices;
 
     public ChooseMakeTempInHandAction(ArrayList<AbstractCard> cards) {
         this.duration = Settings.ACTION_DUR_FAST;
-        p = AbstractDungeon.player;
         this.amount = 1;
         this.choices = cards;
     }
 
     @Override
     public void update() {
-        AbstractCard c;
         if (this.duration == Settings.ACTION_DUR_FAST) {
             if (AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
                 this.isDone = true;

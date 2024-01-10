@@ -12,14 +12,13 @@ import com.megacrit.cardcrawl.stances.*;
 
 import java.lang.reflect.InvocationTargetException;
 
-@SuppressWarnings("ALL")
 public class SyncAction extends AbstractGameAction {
 
     //Exhaust any number of cards in your hand. Draw that many cards and gain energy equal to their cost.
     private final AbstractPlayer p;
 
 
-    @SuppressWarnings("unused")
+    
     public SyncAction() {
         this.duration = Settings.ACTION_DUR_FAST;
         this.actionType = ActionType.CARD_MANIPULATION;
@@ -40,7 +39,7 @@ public class SyncAction extends AbstractGameAction {
         this.isDone = true;
     }
 
-    @SuppressWarnings("unused")
+    
     @SpirePatch(
             clz = AbstractStance.class,
             method = SpirePatch.CLASS
@@ -54,7 +53,7 @@ public class SyncAction extends AbstractGameAction {
             method = SpirePatch.CONSTRUCTOR
     )
     public static class WrathInit {
-        @SuppressWarnings("unused")
+        
         public static void Prefix(WrathStance __instance) {
             StanceField.syncOrb.set(__instance, Lightning.class);
         }
@@ -65,7 +64,7 @@ public class SyncAction extends AbstractGameAction {
             method = SpirePatch.CONSTRUCTOR
     )
     public static class CalmInit {
-        @SuppressWarnings("unused")
+        
         public static void Prefix(CalmStance __instance) {
             StanceField.syncOrb.set(__instance, Frost.class);
         }
@@ -76,7 +75,7 @@ public class SyncAction extends AbstractGameAction {
             method = SpirePatch.CONSTRUCTOR
     )
     public static class DivinityInit {
-        @SuppressWarnings("unused")
+        
         public static void Prefix(DivinityStance __instance) {
             StanceField.syncOrb.set(__instance, Plasma.class);
         }
@@ -87,7 +86,7 @@ public class SyncAction extends AbstractGameAction {
             method = SpirePatch.CONSTRUCTOR
     )
     public static class NeutralInit {
-        @SuppressWarnings("unused")
+        
         public static void Prefix(NeutralStance __instance) {
             StanceField.syncOrb.set(__instance, Dark.class);
         }

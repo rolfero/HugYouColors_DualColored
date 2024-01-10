@@ -8,12 +8,12 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.powers.LoseStrengthPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 
-@SuppressWarnings("ALL")
+
 public class StayOnTargetPower extends BasePower implements DiscardHookPatch.OnDiscardHook {
 
     private static final String ID = BasicMod.makeID("StayOnTargetPower");
 
-    @SuppressWarnings("unused")
+    
     public StayOnTargetPower(AbstractCreature owner, int amount) {
         super(ID, PowerType.BUFF, false, owner, null, amount);
     }

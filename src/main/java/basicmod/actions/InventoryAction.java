@@ -8,14 +8,13 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.relics.ChemicalX;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 
-@SuppressWarnings("ALL")
 public class InventoryAction extends AbstractGameAction {
 
     private boolean freeToPlayOnce = false;
     private final AbstractPlayer p;
     private int energyOnUse = -1;
 
-    @SuppressWarnings("unused")
+    
     public InventoryAction(AbstractPlayer p, boolean freeToPlayOnce, int energyOnUse) {
         this.p = p;
         this.freeToPlayOnce = freeToPlayOnce;

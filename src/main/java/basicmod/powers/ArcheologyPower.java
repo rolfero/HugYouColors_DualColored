@@ -10,10 +10,10 @@ public class ArcheologyPower extends BasePower {
 
     public static final String ID = BasicMod.makeID("ArcheologyPower");
 
-    @SuppressWarnings("unused")
+
     public static final Logger logger = LogManager.getLogger(BasicMod.modID); //Used to output to the console.
 
-    @SuppressWarnings("unused")
+
     public ArcheologyPower(AbstractCreature owner, int amt) {
         super(ID, PowerType.BUFF, false, owner, null, amt);
     }

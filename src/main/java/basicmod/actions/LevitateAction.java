@@ -11,14 +11,13 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.UIStrings;
 
-@SuppressWarnings("ALL")
 public class LevitateAction extends AbstractGameAction {
     private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(BasicMod.makeID("LevitateAction"));
     private static final String[] TEXT = uiStrings.TEXT;
 
     final AbstractPlayer p;
 
-    @SuppressWarnings("unused")
+    
     public LevitateAction() {
         this.duration = Settings.ACTION_DUR_FAST;
         p = AbstractDungeon.player;

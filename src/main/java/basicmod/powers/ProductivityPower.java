@@ -7,14 +7,14 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.FocusPower;
 
-@SuppressWarnings("ALL")
+
 public class ProductivityPower extends BasePower {
 
     public static final String ID = BasicMod.makeID("ProductivityPower");
 
     private boolean playedPowerThisTurn = false;
 
-    @SuppressWarnings("unused")
+    
     public ProductivityPower(AbstractCreature owner, int amount) {
         super(ID, PowerType.BUFF, false, owner, null, amount);
     }

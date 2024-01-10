@@ -2,7 +2,7 @@ package basicmod.util;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
 
-@SuppressWarnings("ALL")
+
 public class CardInfo {
     public final String baseId; //The card's ID not including the mod prefix.
     public final int baseCost;
@@ -11,7 +11,7 @@ public class CardInfo {
     public final AbstractCard.CardRarity cardRarity;
     public final AbstractCard.CardColor cardColor;
 
-    @SuppressWarnings("unused")
+    
     public CardInfo(String baseId, int baseCost, AbstractCard.CardType cardType, AbstractCard.CardTarget cardTarget, AbstractCard.CardRarity cardRarity, AbstractCard.CardColor cardColor)
     {
         this.baseId = baseId;

@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.powers.PoisonPower;
 @SuppressWarnings({"ALL", "unused"})
 public class HalfAgainDamage extends AbstractDamageModifier {
 
-    @SuppressWarnings("unused")
+
     public static final String ID = BasicMod.makeID("HalfAgainDamage");
 
     @Override

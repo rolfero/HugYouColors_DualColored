@@ -4,12 +4,12 @@ import basicmod.BasicMod;
 import com.megacrit.cardcrawl.actions.common.UpgradeRandomCardAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 
-@SuppressWarnings("ALL")
+
 public class ProgressionPower extends BasePower {
 
     public static final String ID = BasicMod.makeID("ProgressionPower");
 
-    @SuppressWarnings("unused")
+    
     public ProgressionPower(AbstractCreature owner, int amt) {
         super(ID, PowerType.BUFF, false, owner, null, amt);
     }

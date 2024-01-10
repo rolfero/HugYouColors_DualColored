@@ -6,12 +6,12 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.powers.*;
 
-@SuppressWarnings("ALL")
+
 public class ToxicityPower extends BasePower {
 
     private static final String ID = BasicMod.makeID("ToxicityPower");
 
-    @SuppressWarnings("unused")
+    
     public ToxicityPower(AbstractCreature owner) {
         super(ID, PowerType.BUFF, false, owner, null, -1);
     }

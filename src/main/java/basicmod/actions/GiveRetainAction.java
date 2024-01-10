@@ -13,7 +13,6 @@ import com.megacrit.cardcrawl.localization.UIStrings;
 
 import java.util.ArrayList;
 
-@SuppressWarnings("ALL")
 public class GiveRetainAction extends AbstractGameAction {
     private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(BasicMod.makeID("GiveRetainAction"));
     private static final String[] TEXT = uiStrings.TEXT;
@@ -21,7 +20,7 @@ public class GiveRetainAction extends AbstractGameAction {
     final AbstractPlayer p;
     private final ArrayList<AbstractCard> cannotRetain = new ArrayList<>();
 
-    @SuppressWarnings("unused")
+
     public GiveRetainAction() {
         this.duration = Settings.ACTION_DUR_FAST;
         p = AbstractDungeon.player;

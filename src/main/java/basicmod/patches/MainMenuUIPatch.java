@@ -8,7 +8,6 @@ import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.megacrit.cardcrawl.screens.charSelect.CharacterOption;
 import com.megacrit.cardcrawl.screens.charSelect.CharacterSelectScreen;
 
-@SuppressWarnings({"ALL", "unused"})
 public class MainMenuUIPatch {
 
     @SpirePatch(
@@ -16,7 +15,6 @@ public class MainMenuUIPatch {
             method = "initialize"
     )
     public static class InitSelectScreen {
-        @SuppressWarnings("unused")
         public static void Postfix(CustomCharacterSelectScreen obj) {
             BasicMod.subColorMenu.initialize(obj);
         }
@@ -27,7 +25,6 @@ public class MainMenuUIPatch {
             method = "initialize"
     )
     public static class InitSelectScreen2 {
-        @SuppressWarnings("unused")
         public static void Postfix(CharacterSelectScreen obj) {
             if (BaseMod.getModdedCharacters().isEmpty()) {
                 BasicMod.subColorMenu.initialize(obj);
@@ -40,7 +37,6 @@ public class MainMenuUIPatch {
             method = "justSelected"
     )
     public static class JustSelected {
-        @SuppressWarnings("unused")
         public static void Prefix(CharacterSelectScreen obj) {
             BasicMod.subColorMenu.chooseColor(BasicMod.subColorMenu.currentChoice);
         }
@@ -51,7 +47,6 @@ public class MainMenuUIPatch {
             method = "renderRelics"
     )
     public static class RenderOptions {
-        @SuppressWarnings("unused")
         public static void Postfix(CharacterOption obj, SpriteBatch sb) {
             if (obj.selected)
                 BasicMod.subColorMenu.render(sb);
@@ -63,7 +58,6 @@ public class MainMenuUIPatch {
             method = "updateHitbox"
     )
     public static class UpdateOptions {
-        @SuppressWarnings("unused")
         public static void Postfix(CharacterOption obj) {
 
             if (obj.selected)

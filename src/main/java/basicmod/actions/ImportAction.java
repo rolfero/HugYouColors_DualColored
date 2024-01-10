@@ -13,14 +13,13 @@ import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToHandEffect;
 
 import java.util.ArrayList;
 
-@SuppressWarnings("ALL")
 public class ImportAction extends AbstractGameAction {
     private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(BasicMod.makeID("ImportAction"));
     private static final String[] TEXT = uiStrings.TEXT;
     private boolean retrieveCard = false;
     private final boolean upgraded;
 
-    @SuppressWarnings("unused")
+    
     public ImportAction(boolean upgraded) {
         this.actionType = ActionType.CARD_MANIPULATION;
         this.duration = Settings.ACTION_DUR_FAST;

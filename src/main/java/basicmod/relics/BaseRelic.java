@@ -8,16 +8,16 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 
 import static basicmod.BasicMod.relicPath;
 
-@SuppressWarnings("ALL")
+
 public abstract class BaseRelic extends CustomRelic {
-    @SuppressWarnings("unused")
+
     public AbstractCard.CardColor pool = null;
-    @SuppressWarnings("unused")
+
     public RelicType relicType = RelicType.SHARED;
     protected final String imageName;
 
     //for character specific relics
-    @SuppressWarnings("unused")
+
     public BaseRelic(String id, String imageName, AbstractCard.CardColor pool, RelicTier tier, LandingSound sfx) {
         super(id, TextureLoader.getTexture(relicPath(imageName + ".png")), tier, sfx);
 
@@ -27,7 +27,7 @@ public abstract class BaseRelic extends CustomRelic {
         loadOutline();
     }
 
-    @SuppressWarnings("unused")
+
     public BaseRelic(String id, String imageName, RelicTier tier, LandingSound sfx) {
         super(id, TextureLoader.getTexture(relicPath(imageName + ".png")), tier, sfx);
 

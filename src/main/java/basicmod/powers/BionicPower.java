@@ -14,12 +14,12 @@ import com.megacrit.cardcrawl.powers.DexterityPower;
 import com.megacrit.cardcrawl.powers.FocusPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 
-@SuppressWarnings("ALL")
+
 public class BionicPower extends BasePower {
 
     public static final String ID = BasicMod.makeID("BionicPower");
 
-    @SuppressWarnings("unused")
+
     public BionicPower(AbstractCreature owner) {
         super(ID, PowerType.BUFF, false, owner, null, -1);
     }
@@ -49,7 +49,7 @@ public class BionicPower extends BasePower {
             method = "onModifyPower"
     )
     public static class OnModifyPowerPatch {
-        @SuppressWarnings("unused")
+
         public static void Postfix() {
             if (AbstractDungeon.player != null) {
                 if (!AbstractDungeon.player.hasPower(FocusPower.POWER_ID)) {
@@ -67,7 +67,7 @@ public class BionicPower extends BasePower {
             method = "applyFocus"
     )
     public static class ApplyFocusPatch {
-        @SuppressWarnings("unused")
+
         public static void Postfix(AbstractOrb __instance) {
             if (AbstractDungeon.player == null || !AbstractDungeon.player.hasPower(BionicPower.ID)) {
                 return;

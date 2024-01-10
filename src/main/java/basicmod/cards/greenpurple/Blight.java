@@ -11,7 +11,6 @@ import com.megacrit.cardcrawl.powers.watcher.MarkPower;
 
 import static basicmod.BasicMod.makeID;
 
-@SuppressWarnings("ALL")
 public class Blight extends DualCard {
 
     // Apply 4 (6) Mark. All enemies gain Poison equal to their Mark.
@@ -24,13 +23,13 @@ public class Blight extends DualCard {
             BasicMod.Enums.CARD_DUAL_GP_COLOR //BasicMod.Enums.CARD_DUAL_GR_COLOR //The card color. If you're making your own character, it'll look something like this. Otherwise, it'll be CardColor.RED or something similar for a basegame character color.
     );
 
-    @SuppressWarnings("unused")
+    
     public static final String ID = makeID(cardInfo.baseId);
 
     private static final int MAGIC = 4;
     private static final int UPG_MAGIC = 2;
 
-    @SuppressWarnings("unused")
+    
     public Blight() {
         super(cardInfo, CardColor.GREEN, CardColor.PURPLE); //change this to super(cardInfo, true); for updating description
         setMagic(MAGIC, UPG_MAGIC);
