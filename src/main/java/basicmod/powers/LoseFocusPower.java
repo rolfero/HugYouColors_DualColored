@@ -1,6 +1,6 @@
 package basicmod.powers;
 
-import basicmod.BasicMod;
+import basicmod.HugYouColors;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.powers.FocusPower;
 
 public class LoseFocusPower extends BasePower {
 
-    private static final String ID = BasicMod.makeID("LoseFocusPower");
+    private static final String ID = HugYouColors.makeID("LoseFocusPower");
 
 
     public LoseFocusPower(AbstractCreature owner, int amt) {

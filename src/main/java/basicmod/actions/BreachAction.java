@@ -1,6 +1,6 @@
 package basicmod.actions;
 
-import basicmod.BasicMod;
+import basicmod.HugYouColors;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.localization.UIStrings;
 
 
 public class BreachAction extends AbstractGameAction {
-    private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(BasicMod.makeID("BreachAction"));
+    private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(HugYouColors.makeID("BreachAction"));
     private static final String[] TEXT = uiStrings.TEXT;
 
     private final boolean chooseAny;

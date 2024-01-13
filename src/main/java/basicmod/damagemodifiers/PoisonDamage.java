@@ -1,6 +1,6 @@
 package basicmod.damagemodifiers;
 
-import basicmod.BasicMod;
+import basicmod.HugYouColors;
 import com.evacipated.cardcrawl.mod.stslib.damagemods.AbstractDamageModifier;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.powers.PoisonPower;
 public class PoisonDamage extends AbstractDamageModifier {
 
 
-    public static final String ID = BasicMod.makeID("PoisonDamage");
+    public static final String ID = HugYouColors.makeID("PoisonDamage");
 
     @Override
     public void onLastDamageTakenUpdate(DamageInfo info, int lastDamageTaken, int overkillAmount, AbstractCreature targetHit) {

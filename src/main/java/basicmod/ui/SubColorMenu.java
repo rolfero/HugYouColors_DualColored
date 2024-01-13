@@ -3,11 +3,16 @@ package basicmod.ui;
 import basemod.CustomCharacterSelectScreen;
 import basemod.ReflectionHacks;
 import basemod.patches.com.megacrit.cardcrawl.screens.options.DropdownMenu.DropdownColoring;
-import basicmod.BasicMod;
+import basicmod.HugYouColors;
+import basicmod.patches.MainMenuUIPatch;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.FontHelper;
+import com.megacrit.cardcrawl.helpers.Hitbox;
+import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.screens.charSelect.CharacterOption;
 import com.megacrit.cardcrawl.screens.charSelect.CharacterSelectScreen;
 import com.megacrit.cardcrawl.screens.options.DropdownMenu;
@@ -16,9 +21,12 @@ import java.util.ArrayList;
 
 
 public class SubColorMenu {
+    private static UIStrings uiStrings;
+    private static String[] TEXT;
 
-    private static float DROPDOWN_X = 200.0f * Settings.scale;
-    private static float DROPDOWN_Y = Settings.HEIGHT - 255.0f * Settings.scale;
+
+    public static float DROPDOWN_X;
+    public static float DROPDOWN_Y;
     
     private static final float CHECK_X = 200.0f * Settings.scale;
     
@@ -41,14 +49,16 @@ public class SubColorMenu {
         }
     }
 
-    public void initialize(CharacterSelectScreen charSelectScreen) {
+    public void initialize(CharacterSelectScreen charSelectScreen, String colorName) {
 
         DROPDOWN_X = 200.0f * Settings.scale;
-        DROPDOWN_Y = Settings.HEIGHT - 255.0f * Settings.scale;
+        DROPDOWN_Y = Settings.HEIGHT - 220.0f * Settings.scale;
 
         characterSelectScreen = charSelectScreen;
         //should be called after the options are created. Which is when, exactly?
         ArrayList<String> colorNames = new ArrayList<>();
+
+        colorNames.add(colorName);
 
         for (CharacterOption characterOption : getCharacterOptionList(characterSelectScreen)) {
             colorNames.add(characterOption.name);
@@ -58,13 +68,12 @@ public class SubColorMenu {
 
         DropdownColoring.RowToColor.function.set(dropdown, this::getRowColor);
 
-        //TODO: Toggle this on or off, dont play with sub color!
-
-        chooseColor(0); //First choice, maybe save this as last played or whatever
+        chooseColor(1); //First choice, maybe save this as last played or whatever
     }
 
     public boolean isChosenCharacter(int i) {
-        return getCharacterOptionList(characterSelectScreen).get(i).selected;
+        if (i == 0) return !HugYouColors.getActiveConfig();
+        return getCharacterOptionList(characterSelectScreen).get(i-1).selected;
     }
 
     public Color getRowColor(int i) {
@@ -76,12 +85,12 @@ public class SubColorMenu {
     }
 
     public void chooseColor(int i) {
-        if (isChosenCharacter(i)) {
-            if (dropdown.rows.size() > 1) {
-                if (currentChoice == i && i == 0) {
-                    dropdown.setSelectedIndex(1);
+        if (isChosenCharacter(i) && i != 0) {
+            if (dropdown.rows.size() > 2) {
+                if (currentChoice == i && i == 1) {
+                    dropdown.setSelectedIndex(2);
                 } else if (currentChoice == i) {
-                    dropdown.setSelectedIndex(0);
+                    dropdown.setSelectedIndex(1);
                 } else {
                     dropdown.setSelectedIndex(currentChoice);
                 }
@@ -89,23 +98,18 @@ public class SubColorMenu {
             }
         }
         currentChoice = i;
-        BasicMod.playerSecondary = getCharacterOptionList(characterSelectScreen).get(i).c;
+        if (currentChoice == 0) {
+            HugYouColors.setActiveConfig(false);
+        } else {
+            HugYouColors.setActiveConfig(true);
+            HugYouColors.playerSecondary = getCharacterOptionList(characterSelectScreen).get(i-1).c;
+        }
     }
 
 
 
     public void update() {
-
         dropdown.update();
-
-    }
-
-    public void render(SpriteBatch sb) {
-        //sb.draw(MENU_BG, BG_X, BG_Y, 0f, 0f, MENU_BG.getRegionWidth(), MENU_BG.getRegionHeight(), BG_X_SCALE, BG_Y_SCALE, 0f);
-        dropdown.render(sb, DROPDOWN_X, DROPDOWN_Y);
-
-        FontHelper.renderSmartText(sb, FontHelper.buttonLabelFont, "Who else is influencing your actions?", DROPDOWN_X - 25.0F * Settings.xScale, DROPDOWN_Y + 40.0F * Settings.yScale, 99999.0F, 38.0F * Settings.scale, Settings.GOLD_COLOR, 0.75F);
-
     }
 
 }

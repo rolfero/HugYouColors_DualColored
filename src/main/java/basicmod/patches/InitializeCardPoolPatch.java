@@ -1,6 +1,6 @@
 package basicmod.patches;
 
-import basicmod.BasicMod;
+import basicmod.HugYouColors;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
@@ -13,10 +13,11 @@ public class InitializeCardPoolPatch {
     public static class SecondaryInitializeCardPool {
         
         public static void Postfix() {
-            BasicMod.initializeSecondaryCardPools();
-            BasicMod.initializeDualCardPools();
-            int newOrbs = (AbstractDungeon.player.masterMaxOrbs + BasicMod.playerSecondary.masterMaxOrbs + 1)/2;
-            AbstractDungeon.player.masterMaxOrbs = Math.max(newOrbs, AbstractDungeon.player.masterMaxOrbs);
+            if (HugYouColors.currentRunActive) {
+                HugYouColors.initializeSecondaryCardPools();
+            }
+            if (HugYouColors.getConfigDualSet() || HugYouColors.getConfigDualAll())
+                HugYouColors.initializeDualCardPools();
         }
     }
 }

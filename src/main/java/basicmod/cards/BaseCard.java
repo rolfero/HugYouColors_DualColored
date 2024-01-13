@@ -3,7 +3,7 @@ package basicmod.cards;
 import basemod.BaseMod;
 import basemod.abstracts.CustomCard;
 import basemod.abstracts.DynamicVariable;
-import basicmod.BasicMod;
+import basicmod.HugYouColors;
 import basicmod.util.CardInfo;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -14,7 +14,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.function.BiFunction;
 
-import static basicmod.BasicMod.makeID;
+import static basicmod.HugYouColors.makeID;
 import static basicmod.util.TextureLoader.getCardTextureString;
 
 
@@ -332,7 +332,7 @@ public abstract class BaseCard extends CustomCard {
             {
                 if (cardStrings.UPGRADE_DESCRIPTION == null)
                 {
-                    BasicMod.logger.error("Card " + cardID + " upgrades description and has null upgrade description.");
+                    HugYouColors.logger.error("Card " + cardID + " upgrades description and has null upgrade description.");
                 }
                 else
                 {

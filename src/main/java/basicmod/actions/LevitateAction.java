@@ -1,6 +1,6 @@
 package basicmod.actions;
 
-import basicmod.BasicMod;
+import basicmod.HugYouColors;
 import com.evacipated.cardcrawl.mod.stslib.actions.defect.TriggerPassiveAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.GameActionManager;
@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.UIStrings;
 
 public class LevitateAction extends AbstractGameAction {
-    private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(BasicMod.makeID("LevitateAction"));
+    private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(HugYouColors.makeID("LevitateAction"));
     private static final String[] TEXT = uiStrings.TEXT;
 
     final AbstractPlayer p;

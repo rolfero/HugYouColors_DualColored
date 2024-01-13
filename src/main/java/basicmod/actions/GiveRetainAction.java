@@ -2,7 +2,7 @@ package basicmod.actions;
 
 import basemod.cardmods.RetainMod;
 import basemod.helpers.CardModifierManager;
-import basicmod.BasicMod;
+import basicmod.HugYouColors;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -14,7 +14,7 @@ import com.megacrit.cardcrawl.localization.UIStrings;
 import java.util.ArrayList;
 
 public class GiveRetainAction extends AbstractGameAction {
-    private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(BasicMod.makeID("GiveRetainAction"));
+    private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(HugYouColors.makeID("GiveRetainAction"));
     private static final String[] TEXT = uiStrings.TEXT;
 
     final AbstractPlayer p;

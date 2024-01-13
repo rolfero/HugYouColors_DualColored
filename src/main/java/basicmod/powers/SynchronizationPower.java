@@ -1,13 +1,13 @@
 package basicmod.powers;
 
-import basicmod.BasicMod;
+import basicmod.HugYouColors;
 import basicmod.actions.SyncAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 
 
 public class SynchronizationPower extends BasePower {
 
-    public static final String ID = BasicMod.makeID("SynchronizationPower");
+    public static final String ID = HugYouColors.makeID("SynchronizationPower");
 
     
     public SynchronizationPower(AbstractCreature owner, int amount) {

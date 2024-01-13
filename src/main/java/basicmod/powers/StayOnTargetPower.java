@@ -1,6 +1,6 @@
 package basicmod.powers;
 
-import basicmod.BasicMod;
+import basicmod.HugYouColors;
 import basicmod.patches.DiscardHookPatch;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.powers.StrengthPower;
 
 public class StayOnTargetPower extends BasePower implements DiscardHookPatch.OnDiscardHook {
 
-    private static final String ID = BasicMod.makeID("StayOnTargetPower");
+    private static final String ID = HugYouColors.makeID("StayOnTargetPower");
 
     
     public StayOnTargetPower(AbstractCreature owner, int amount) {

@@ -1,6 +1,6 @@
 package basicmod.actions;
 
-import basicmod.BasicMod;
+import basicmod.HugYouColors;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -14,7 +14,7 @@ import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToHandEffect;
 import java.util.ArrayList;
 
 public class ImportAction extends AbstractGameAction {
-    private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(BasicMod.makeID("ImportAction"));
+    private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(HugYouColors.makeID("ImportAction"));
     private static final String[] TEXT = uiStrings.TEXT;
     private boolean retrieveCard = false;
     private final boolean upgraded;

@@ -1,6 +1,6 @@
 package basicmod.powers;
 
-import basicmod.BasicMod;
+import basicmod.HugYouColors;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.actions.common.UpgradeSpecificCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class UpgradeNextPlayedCardPower extends BasePower {
 
-    private static final String ID = BasicMod.makeID("UpgradeNextPlayedCardPower");
+    private static final String ID = HugYouColors.makeID("UpgradeNextPlayedCardPower");
 
 
     public UpgradeNextPlayedCardPower(AbstractCreature owner, int amount) {

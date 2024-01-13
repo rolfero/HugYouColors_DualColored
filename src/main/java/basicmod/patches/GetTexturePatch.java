@@ -6,8 +6,8 @@ import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpireReturn;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 
-import static basicmod.BasicMod.*;
-import static basicmod.BasicMod.Enums.*;
+import static basicmod.HugYouColors.*;
+import static basicmod.HugYouColors.Enums.*;
 
 @SuppressWarnings({"ALL", "unused"})
 public class GetTexturePatch {

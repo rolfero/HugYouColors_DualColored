@@ -1,6 +1,6 @@
 package basicmod.powers;
 
-import basicmod.BasicMod;
+import basicmod.HugYouColors;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.powers.DexterityPower;
@@ -8,7 +8,7 @@ import com.megacrit.cardcrawl.powers.DexterityPower;
 
 public class SlippingPower extends BasePower {
 
-    public static final String ID = BasicMod.makeID("SlippingPower");
+    public static final String ID = HugYouColors.makeID("SlippingPower");
 
     
     public SlippingPower(AbstractCreature owner, int amt) {

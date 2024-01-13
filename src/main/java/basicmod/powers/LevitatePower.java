@@ -1,13 +1,13 @@
 package basicmod.powers;
 
-import basicmod.BasicMod;
+import basicmod.HugYouColors;
 import basicmod.actions.LevitateAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 
 
 public class LevitatePower extends BasePower {
 
-    public static final String ID = BasicMod.makeID("LevitatePower"); //SHOULD NOT BE ABLE TO STACK.
+    public static final String ID = HugYouColors.makeID("LevitatePower"); //SHOULD NOT BE ABLE TO STACK.
 
     
     public LevitatePower(AbstractCreature owner) {

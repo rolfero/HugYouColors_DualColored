@@ -1,6 +1,6 @@
 package basicmod.powers;
 
-import basicmod.BasicMod;
+import basicmod.HugYouColors;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -17,7 +17,7 @@ import com.megacrit.cardcrawl.powers.StrengthPower;
 
 public class BionicPower extends BasePower {
 
-    public static final String ID = BasicMod.makeID("BionicPower");
+    public static final String ID = HugYouColors.makeID("BionicPower");
 
 
     public BionicPower(AbstractCreature owner) {

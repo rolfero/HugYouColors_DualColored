@@ -1,6 +1,6 @@
 package basicmod.powers;
 
-import basicmod.BasicMod;
+import basicmod.HugYouColors;
 import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.BetterOnApplyPowerPower;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.stances.WrathStance;
 
 public class TorturePower extends BasePower implements BetterOnApplyPowerPower {
 
-    private static final String ID = BasicMod.makeID("TorturePower");
+    private static final String ID = HugYouColors.makeID("TorturePower");
 
 
     public TorturePower(AbstractCreature owner) {

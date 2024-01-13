@@ -1,6 +1,6 @@
 package basicmod.powers;
 
-import basicmod.BasicMod;
+import basicmod.HugYouColors;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.powers.*;
 
 public class ToxicityPower extends BasePower {
 
-    private static final String ID = BasicMod.makeID("ToxicityPower");
+    private static final String ID = HugYouColors.makeID("ToxicityPower");
 
     
     public ToxicityPower(AbstractCreature owner) {

@@ -1,6 +1,6 @@
 package basicmod.powers;
 
-import basicmod.BasicMod;
+import basicmod.HugYouColors;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.powers.FocusPower;
 
 public class ProductivityPower extends BasePower {
 
-    public static final String ID = BasicMod.makeID("ProductivityPower");
+    public static final String ID = HugYouColors.makeID("ProductivityPower");
 
     private boolean playedPowerThisTurn = false;
 

@@ -1,5 +1,6 @@
 package basicmod.patches;
 
+import basicmod.HugYouColors;
 import com.badlogic.gdx.math.MathUtils;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpireReturn;
@@ -7,7 +8,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.random.Random;
 
-import static basicmod.BasicMod.*;
+import static basicmod.HugYouColors.*;
 
 
 public class RewardSecondaryColorPatch {
@@ -22,6 +23,7 @@ public class RewardSecondaryColorPatch {
     public static class RewardCards1 {
 
         public static SpireReturn<AbstractCard> Prefix(AbstractCard.CardRarity rarity, Random rng) {
+            if (!currentRunActive) return SpireReturn.Continue();
             if (rng.random(99) >= (100-PRIMARY_CHANCE)) return SpireReturn.Continue();
 
             switch (rarity) {
@@ -48,6 +50,7 @@ public class RewardSecondaryColorPatch {
     public static class RewardCards2 {
 
         public static SpireReturn<AbstractCard> Prefix(AbstractCard.CardRarity rarity) {
+            if (!currentRunActive) return SpireReturn.Continue();
             if (AbstractDungeon.cardRng.random(99) >= (100-PRIMARY_CHANCE)) return SpireReturn.Continue();
 
             switch (rarity) {
@@ -73,6 +76,7 @@ public class RewardSecondaryColorPatch {
     public static class RewardCards3 {
 
         public static SpireReturn<AbstractCard> Prefix(AbstractCard.CardRarity rarity) {
+            if (!currentRunActive) return SpireReturn.Continue();
             if (MathUtils.random(99) >= (100-PRIMARY_CHANCE)) return SpireReturn.Continue();
 
             switch (rarity) {
@@ -132,6 +136,7 @@ public class RewardSecondaryColorPatch {
     public static class RewardCards4 {
 
         public static SpireReturn<AbstractCard> Prefix(AbstractCard.CardRarity rarity, AbstractCard.CardType type, boolean useRng) {
+            if (!currentRunActive) return SpireReturn.Continue();
 
             if (rarity == AbstractCard.CardRarity.CURSE) return SpireReturn.Continue();
 

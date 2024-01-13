@@ -1,6 +1,6 @@
 package basicmod.actions;
 
-import basicmod.BasicMod;
+import basicmod.HugYouColors;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.FastDrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
@@ -18,7 +18,7 @@ public class GlobalityAction extends AbstractGameAction {
 
     //Exhaust any number of cards in your hand. Draw that many cards and gain energy equal to their cost.
     private final AbstractPlayer p;
-    private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(BasicMod.makeID("GlobalityAction"));
+    private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(HugYouColors.makeID("GlobalityAction"));
     private static final String[] TEXT = uiStrings.TEXT;
 
 

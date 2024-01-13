@@ -53,5 +53,16 @@
     "TEXT": [
       "Choose cards to discard"
     ]
+  },
+  "${modID}:MainMenuUIPatch": {
+    "TEXT": [
+      "Shared dual-colored cards",
+      "All dual-colored cards",
+      "Dual-colored cards",
+      "Play with the set of dual-colored cards between both characters.",
+      "Play with all dual-colored cards that share a color with your character.",
+      "What character is aiding you?",
+      "None"
+    ]
   }
 }

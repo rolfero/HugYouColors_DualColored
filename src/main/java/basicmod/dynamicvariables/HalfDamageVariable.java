@@ -1,7 +1,7 @@
 package basicmod.dynamicvariables;
 
 import basemod.abstracts.DynamicVariable;
-import basicmod.BasicMod;
+import basicmod.HugYouColors;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 
 @SuppressWarnings({"ALL", "unused"})
@@ -9,7 +9,7 @@ public class HalfDamageVariable extends DynamicVariable {
 
     @Override
     public String key() {
-        return BasicMod.makeID("HalfDamage");
+        return HugYouColors.makeID("HalfDamage");
     }
 
     @Override

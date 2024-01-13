@@ -3,12 +3,10 @@ package basicmod;
 import basemod.AutoAdd;
 import basemod.BaseMod;
 import basemod.abstracts.CustomSavable;
-import basemod.interfaces.EditCardsSubscriber;
-import basemod.interfaces.EditKeywordsSubscriber;
-import basemod.interfaces.EditStringsSubscriber;
-import basemod.interfaces.PostInitializeSubscriber;
+import basemod.interfaces.*;
 import basicmod.cards.DualCard;
 import basicmod.dynamicvariables.HalfDamageVariable;
+import basicmod.events.CharacterHelpEvent;
 import basicmod.ui.SubColorMenu;
 import basicmod.util.GeneralUtils;
 import basicmod.util.KeywordInfo;
@@ -22,6 +20,7 @@ import com.badlogic.gdx.utils.GdxRuntimeException;
 import com.evacipated.cardcrawl.modthespire.Loader;
 import com.evacipated.cardcrawl.modthespire.ModInfo;
 import com.evacipated.cardcrawl.modthespire.Patcher;
+import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
@@ -39,6 +38,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.scannotation.AnnotationDB;
 
+import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
 
@@ -46,24 +46,46 @@ import static com.megacrit.cardcrawl.helpers.ImageMaster.*;
 
 
 @SpireInitializer
-public class BasicMod implements
+public class HugYouColors implements
         EditStringsSubscriber,
         EditCardsSubscriber,
         EditKeywordsSubscriber,
-        PostInitializeSubscriber {
+        PostInitializeSubscriber,
+        StartGameSubscriber
+        {
 
+    //TODO: SecondaryCharacter relics should be discoverable
+    //TODO: Show which character is aiding
 
     public static ModInfo info;
     public static String modID; //Edit your pom.xml to change this
 
     static { loadModInfo(); }
     public static final Logger logger = LogManager.getLogger(modID); //Used to output to the console.
-    private static final String resourcesFolder = "basicmod";
+    private static final String resourcesFolder = "HugYouColors";
+    public static SpireConfig modConfig = null;
+    public static SpireConfig currentRunConfig = null;
+    public static boolean currentRunActive = false;
+    public static boolean currentRunDualSetActive = false;
+    public static boolean currentRunAllDualActive = false;
 
     //This is used to prefix the IDs of various objects like cards and relics,
     //to avoid conflicts between different mods using the same name for things.
     public static String makeID(String id) {
         return modID + ":" + id;
+    }
+
+    public static boolean newGameStarted = false;
+
+    @Override
+    public void receiveStartGame() {
+        if (!newGameStarted) {
+            if (HugYouColors.getActiveConfig()) {
+                int newOrbs = (AbstractDungeon.player.masterMaxOrbs + HugYouColors.playerSecondary.masterMaxOrbs + 1) / 2;
+                AbstractDungeon.player.masterMaxOrbs = Math.max(newOrbs, AbstractDungeon.player.masterMaxOrbs);
+            }
+            newGameStarted = true;
+        }
     }
 
     public static class Enums {
@@ -118,7 +140,7 @@ public class BasicMod implements
     //This will be called by ModTheSpire because of the @SpireInitializer annotation at the top of the class.
     
     public static void initialize() {
-        new BasicMod();
+        new HugYouColors();
         BaseMod.addColor(Enums.CARD_DUAL_RG_COLOR, Color.WHITE,
                 BG_ATTACK, BG_SKILL, BG_POWER, ENERGY_ORB,
                 BG_ATTACK_P, BG_SKILL_P, BG_POWER_P, ENERGY_ORB_P,
@@ -143,10 +165,70 @@ public class BasicMod implements
                 BG_ATTACK, BG_SKILL, BG_POWER, ENERGY_ORB,
                 BG_ATTACK_P, BG_SKILL_P, BG_POWER_P, ENERGY_ORB_P,
                 SMALL_ORB);
+
+        try {
+            Properties defaults = new Properties();
+            defaults.put("active", "TRUE");
+            defaults.put("dualset", "TRUE");
+            defaults.put("dualall", "FALSE");
+            modConfig = new SpireConfig(modID, "hugYouColorsConfig", defaults);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        try {
+            currentRunConfig = new SpireConfig(modID, "hugYouColorsConfigCurrentRun");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static boolean getConfigDualSet() {
+        return modConfig == null || modConfig.getBool("dualset");
+    }
+
+    public static void setConfigDualSet(boolean active) {
+        if (modConfig != null) {
+            modConfig.setBool("dualset",active);
+            try {
+                modConfig.save();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public static boolean getConfigDualAll() {
+        return modConfig == null || modConfig.getBool("dualall");
+    }
+
+    public static void setConfigDualAll(boolean active) {
+        if (modConfig != null) {
+            modConfig.setBool("dualall",active);
+            try {
+                modConfig.save();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public static boolean getActiveConfig() {
+        return modConfig == null || modConfig.getBool("active");
+    }
+
+    public static void setActiveConfig(boolean active) {
+        if (modConfig != null) {
+            modConfig.setBool("active",active);
+            try {
+                modConfig.save();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     
-    public BasicMod() {
+    public HugYouColors() {
         BaseMod.subscribe(this); //This will make BaseMod trigger all the subscribers at their appropriate times.
         logger.info(modID + " subscribed to BaseMod.");
 
@@ -183,7 +265,7 @@ public class BasicMod implements
 
     }
 
-    public static final SubColorMenu subColorMenu = new SubColorMenu();
+    public static SubColorMenu subColorMenu = new SubColorMenu();
 
     public static AbstractPlayer playerSecondary;
 
@@ -195,9 +277,6 @@ public class BasicMod implements
     public static CardGroup secondaryCommonCardPool;
     public static CardGroup secondaryUncommonCardPool;
     public static CardGroup secondaryRareCardPool;
-    public static CardGroup srcSecondaryCommonCardPool;
-    public static CardGroup srcSecondaryUncommonCardPool;
-    public static CardGroup srcSecondaryRareCardPool;
 
     public static void initializeSecondaryCardPools() {
         logger.info("INIT SECONDARY CARD POOL");
@@ -234,15 +313,6 @@ public class BasicMod implements
             logger.info("Unspecified rarity: " + c.rarity
                     .name() + " when creating pools! HugYouColors");
         }
-        srcSecondaryRareCardPool = new CardGroup(CardGroup.CardGroupType.CARD_POOL);
-        srcSecondaryUncommonCardPool = new CardGroup(CardGroup.CardGroupType.CARD_POOL);
-        srcSecondaryCommonCardPool = new CardGroup(CardGroup.CardGroupType.CARD_POOL);
-        for (AbstractCard c : secondaryRareCardPool.group)
-            srcSecondaryRareCardPool.addToBottom(c);
-        for (AbstractCard c : secondaryUncommonCardPool.group)
-            srcSecondaryUncommonCardPool.addToBottom(c);
-        for (AbstractCard c : secondaryCommonCardPool.group)
-            srcSecondaryCommonCardPool.addToBottom(c);
         logger.info("Secondary Cardpool load time: " + (System.currentTimeMillis() - startTime) + "ms");
     }
 
@@ -260,24 +330,28 @@ public class BasicMod implements
         CardLibrary.addCardsIntoPool(tmpPool, Enums.CARD_DUAL_BP_COLOR);
 
         for (AbstractCard c : tmpPool) {
-            if (!(c instanceof DualCard) || !((DualCard)c).belongsTo(AbstractDungeon.player.getCardColor(), playerSecondary.getCardColor()))
+            if (HugYouColors.getActiveConfig() && HugYouColors.getConfigDualSet()) {
+                if (!(c instanceof DualCard) || !((DualCard) c).belongsTo(AbstractDungeon.player.getCardColor(), playerSecondary.getCardColor()))
+                    continue;
+            } else if (!HugYouColors.getActiveConfig() && HugYouColors.getConfigDualAll()) {
+                if (!(c instanceof DualCard) || !((DualCard) c).belongsTo(AbstractDungeon.player.getCardColor()))
+                    continue;
+            } else {
                 continue;
+            }
             switch (c.rarity) {
                 case COMMON:
                     secondaryCommonCardPool.addToTop(c);
-                    srcSecondaryCommonCardPool.addToTop(c);
                     AbstractDungeon.commonCardPool.addToTop(c);
                     AbstractDungeon.srcCommonCardPool.addToTop(c);
                     continue;
                 case UNCOMMON:
                     secondaryUncommonCardPool.addToTop(c);
-                    srcSecondaryUncommonCardPool.addToTop(c);
                     AbstractDungeon.uncommonCardPool.addToTop(c);
                     AbstractDungeon.srcUncommonCardPool.addToTop(c);
                     continue;
                 case RARE:
                     secondaryRareCardPool.addToTop(c);
-                    srcSecondaryRareCardPool.addToTop(c);
                     AbstractDungeon.rareCardPool.addToTop(c);
                     AbstractDungeon.srcRareCardPool.addToTop(c);
                     continue;
@@ -376,12 +450,11 @@ public class BasicMod implements
         //The information used is taken from your pom.xml file.
         BaseMod.registerModBadge(badgeTexture, info.Name, GeneralUtils.arrToString(info.Authors), info.Description, null);
 
+        BaseMod.addEvent(CharacterHelpEvent.ID, CharacterHelpEvent.class);
+
         secondaryCommonCardPool = new CardGroup(CardGroup.CardGroupType.CARD_POOL);
         secondaryUncommonCardPool = new CardGroup(CardGroup.CardGroupType.CARD_POOL);
         secondaryRareCardPool = new CardGroup(CardGroup.CardGroupType.CARD_POOL);
-        srcSecondaryCommonCardPool = new CardGroup(CardGroup.CardGroupType.CARD_POOL);
-        srcSecondaryUncommonCardPool = new CardGroup(CardGroup.CardGroupType.CARD_POOL);
-        srcSecondaryRareCardPool = new CardGroup(CardGroup.CardGroupType.CARD_POOL);
 
         //Making some textures here apparently
         //I think we're close!
@@ -423,18 +496,70 @@ public class BasicMod implements
         GREEN_PURPLE_DUAL_TEXTURE_POWER_L = MergeTextures(CARD_POWER_BG_GREEN_L, CARD_POWER_BG_PURPLE_L);
         BLUE_PURPLE_DUAL_TEXTURE_POWER_L = MergeTextures(CARD_POWER_BG_BLUE_L, CARD_POWER_BG_PURPLE_L);
 
-        // savable
+        // SAVABLE HERE
 
         BaseMod.addSaveField("SecondaryColor", new CustomSavable<AbstractPlayer.PlayerClass>() {
 
             @Override
             public AbstractPlayer.PlayerClass onSave() {
-                return BasicMod.playerSecondary.chosenClass;
+                return HugYouColors.playerSecondary.chosenClass;
             }
 
             @Override
             public void onLoad(AbstractPlayer.PlayerClass save) {
-                BasicMod.playerSecondary = CardCrawlGame.characterManager.recreateCharacter(save);
+                HugYouColors.playerSecondary = CardCrawlGame.characterManager.recreateCharacter(save);
+            }
+
+        });
+        BaseMod.addSaveField("CurrentRunActive", new CustomSavable<Boolean>() {
+
+            @Override
+            public Boolean onSave() {
+                return currentRunActive;
+            }
+
+            @Override
+            public void onLoad(Boolean save) {
+                currentRunActive = save == null || save;
+            }
+
+        });
+        BaseMod.addSaveField("CurrentRunDualSet", new CustomSavable<Boolean>() {
+
+            @Override
+            public Boolean onSave() {
+                return currentRunDualSetActive;
+            }
+
+            @Override
+            public void onLoad(Boolean save) {
+                currentRunDualSetActive = save == null || save;
+            }
+
+        });
+        BaseMod.addSaveField("CurrentRunDualAll", new CustomSavable<Boolean>() {
+
+            @Override
+            public Boolean onSave() {
+                return currentRunAllDualActive;
+            }
+
+            @Override
+            public void onLoad(Boolean save) {
+                currentRunAllDualActive = save != null && save;
+            }
+
+        });
+        BaseMod.addSaveField("FirstGameStart", new CustomSavable<Boolean>() {
+
+            @Override
+            public Boolean onSave() {
+                return newGameStarted;
+            }
+
+            @Override
+            public void onLoad(Boolean save) {
+                newGameStarted = save != null && save;
             }
 
         });
@@ -546,7 +671,7 @@ public class BasicMod implements
             if (annotationDB == null)
                 return false;
             Set<String> initializers = annotationDB.getAnnotationIndex().getOrDefault(SpireInitializer.class.getName(), Collections.emptySet());
-            return initializers.contains(BasicMod.class.getName());
+            return initializers.contains(HugYouColors.class.getName());
         }).findFirst();
         if (infos.isPresent()) {
             info = infos.get();

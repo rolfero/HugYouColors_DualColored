@@ -1,13 +1,13 @@
 package basicmod.powers;
 
-import basicmod.BasicMod;
+import basicmod.HugYouColors;
 import com.megacrit.cardcrawl.actions.common.UpgradeRandomCardAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 
 
 public class ProgressionPower extends BasePower {
 
-    public static final String ID = BasicMod.makeID("ProgressionPower");
+    public static final String ID = HugYouColors.makeID("ProgressionPower");
 
     
     public ProgressionPower(AbstractCreature owner, int amt) {

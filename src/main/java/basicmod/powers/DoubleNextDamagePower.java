@@ -1,6 +1,6 @@
 package basicmod.powers;
 
-import basicmod.BasicMod;
+import basicmod.HugYouColors;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class DoubleNextDamagePower extends BasePower {
 
-    private static final String ID = BasicMod.makeID("DoubleNextDamagePower");
+    private static final String ID = HugYouColors.makeID("DoubleNextDamagePower");
 
 
     public DoubleNextDamagePower(AbstractCreature owner, int amount) {

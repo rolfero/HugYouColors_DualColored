@@ -1,6 +1,6 @@
 package basicmod.powers;
 
-import basicmod.BasicMod;
+import basicmod.HugYouColors;
 import basicmod.actions.ChooseMakeTempInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.tempCards.Insight;
@@ -13,7 +13,7 @@ import java.util.ArrayList;
 
 public class StratagemUpgradedPower extends BasePower {
 
-    public static final String ID = BasicMod.makeID("StratagemUpgradedPower");
+    public static final String ID = HugYouColors.makeID("StratagemUpgradedPower");
 
 
     public StratagemUpgradedPower(AbstractCreature owner, int amount) {

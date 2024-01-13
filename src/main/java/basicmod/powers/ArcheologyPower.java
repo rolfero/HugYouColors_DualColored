@@ -1,6 +1,6 @@
 package basicmod.powers;
 
-import basicmod.BasicMod;
+import basicmod.HugYouColors;
 import basicmod.actions.ArcheologyAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import org.apache.logging.log4j.LogManager;
@@ -8,10 +8,10 @@ import org.apache.logging.log4j.Logger;
 
 public class ArcheologyPower extends BasePower {
 
-    public static final String ID = BasicMod.makeID("ArcheologyPower");
+    public static final String ID = HugYouColors.makeID("ArcheologyPower");
 
 
-    public static final Logger logger = LogManager.getLogger(BasicMod.modID); //Used to output to the console.
+    public static final Logger logger = LogManager.getLogger(HugYouColors.modID); //Used to output to the console.
 
 
     public ArcheologyPower(AbstractCreature owner, int amt) {
