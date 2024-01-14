@@ -23,10 +23,8 @@
   "${modID}:ToxicityPower": {
     "NAME": "Toxicity",
     "DESCRIPTIONS": [
-      "At the start of your turn, add ",
-      " Slimed to your draw pile. NL Slimed applies ",
-      " Poison to all enemies for each Slimed played this combat. NL Currently played ",
-      " Slimed."
+      "Whenever you deal damage with an Attack, the target takes ",
+      " damage for each of their debuffs."
     ]
   },
   "${modID}:BuildPower": {

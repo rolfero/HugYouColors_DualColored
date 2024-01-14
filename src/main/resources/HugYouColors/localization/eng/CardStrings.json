@@ -67,7 +67,7 @@
   },
   "${modID}:Toxicity": {
     "NAME": "Toxicity",
-    "DESCRIPTION": "At the start of your turn, add a *Slimed to your deck. NL *Slimed applies !M! Poison to all enemies for each *Slimed played this combat."
+    "DESCRIPTION": "Whenever you deal damage with an Attack, the target takes !M! damage for each of their debuffs."
   },
   "${modID}:Raid": {
     "NAME": "Raid",

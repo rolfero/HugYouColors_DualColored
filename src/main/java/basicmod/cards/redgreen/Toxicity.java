@@ -24,13 +24,12 @@ public class Toxicity extends DualCard {
     
     public static final String ID = makeID(cardInfo.baseId);
 
-    private static final int MAGIC = 1;
+    private static final int MAGIC = 2;
+    private static final int UPG_MAGIC = 3;
     
     public Toxicity() {
         super(cardInfo, CardColor.RED, CardColor.GREEN); //change this to super(cardInfo, true); for updating description
-        setCostUpgrade(0);
-        setMagic(MAGIC);
-        this.cardsToPreview = new Slimed();
+        setMagic(MAGIC, UPG_MAGIC);
     }
 
     @Override

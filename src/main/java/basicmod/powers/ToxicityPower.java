@@ -3,9 +3,12 @@ package basicmod.powers;
 import basicmod.HugYouColors;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.cards.status.Slimed;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -19,37 +22,34 @@ public class ToxicityPower extends BasePower {
     
     public ToxicityPower(AbstractCreature owner, int amt) {
         super(ID, PowerType.BUFF, false, owner, null, amt);
-        this.amount2 = AbstractDungeon.actionManager.cardsPlayedThisCombat.stream().filter((x) -> x instanceof Slimed).toArray().length*this.amount;
         updateDescription();
     }
 
     @Override
-    public void onPlayCard(AbstractCard card, AbstractMonster m) {
-        if (card instanceof Slimed) {
-            this.amount2 += this.amount;
-            addToBot(new AbstractGameAction() {
-                @Override
-                public void update() {
-                    for (AbstractMonster m : AbstractDungeon.getCurrRoom().monsters.monsters) {
-                        if (!m.isDeadOrEscaped()) {
-                            addToTop(new ApplyPowerAction(m, source, new PoisonPower(m, source, amount2), amount2));
-                        }
-                    }
-                    this.isDone = true;
-                }
-            });
-            updateDescription();
+    public void updateDescription() {
+        this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];
+    }
+
+    @Override
+    public void onAttack(DamageInfo info, int damageAmount, AbstractCreature target) {
+        if (info.type != DamageInfo.DamageType.NORMAL)
+            return;
+        if (target.isPlayer || damageAmount <= 0)
+            return;
+        int totalDamage = 0;
+        for (AbstractPower p : target.powers) {
+            if (p.type == PowerType.DEBUFF) {
+                totalDamage += this.amount;
+            }
+        }
+        if (totalDamage > 0) {
+            addToBot(new DamageAction(target, new DamageInfo(info.owner, totalDamage, DamageInfo.DamageType.THORNS)));
+            flash();
         }
     }
 
     @Override
-    public void atStartOfTurnPostDraw() {
-        addToBot(new MakeTempCardInDrawPileAction(new Slimed(), this.amount, true, true));
-        this.flash();
-    }
-
-    @Override
-    public void updateDescription() {
-        this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1] + this.amount + DESCRIPTIONS[2] + this.amount2 + DESCRIPTIONS[3];
+    public void onInflictDamage(DamageInfo info, int damageAmount, AbstractCreature target) {
+        super.onInflictDamage(info, damageAmount, target);
     }
 }
