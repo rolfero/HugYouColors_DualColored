@@ -2,6 +2,7 @@ package basicmod;
 
 import basemod.AutoAdd;
 import basemod.BaseMod;
+import basemod.ModPanel;
 import basemod.abstracts.CustomSavable;
 import basemod.eventUtil.AddEventParams;
 import basemod.interfaces.*;
@@ -11,6 +12,7 @@ import basicmod.events.CharacterHelpEvent;
 import basicmod.ui.SubColorMenu;
 import basicmod.util.GeneralUtils;
 import basicmod.util.KeywordInfo;
+import basicmod.util.ModSliderBetter;
 import basicmod.util.TextureLoader;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
@@ -65,6 +67,7 @@ public class HugYouColors implements
     public static boolean currentRunActive = false;
     public static boolean currentRunDualSetActive = false;
     public static boolean currentRunAllDualActive = false;
+    public static int settingsSecondaryRewardChance = 25;
 
     //This is used to prefix the IDs of various objects like cards and relics,
     //to avoid conflicts between different mods using the same name for things.
@@ -185,7 +188,10 @@ public class HugYouColors implements
             defaults.put("active", "TRUE");
             defaults.put("dualset", "TRUE");
             defaults.put("dualall", "FALSE");
+            defaults.put("secondarychance",25);
             modConfig = new SpireConfig(modID, "hugYouColorsConfig", defaults);
+            modConfig.load();
+            settingsSecondaryRewardChance = modConfig.getInt("secondarychance");
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -430,7 +436,6 @@ public class HugYouColors implements
         Texture badgeTexture = TextureLoader.getTexture(resourcePath("badge.png"));
         //Set up the mod information displayed in the in-game mods menu.
         //The information used is taken from your pom.xml file.
-        BaseMod.registerModBadge(badgeTexture, info.Name, GeneralUtils.arrToString(info.Authors), info.Description, null);
 
         BaseMod.addEvent(new AddEventParams.Builder(CharacterHelpEvent.ID, CharacterHelpEvent.class).endsWithRewardsUI(true).create());
 
@@ -474,6 +479,28 @@ public class HugYouColors implements
         GREEN_BLUE_DUAL_TEXTURE_POWER_L = MergeTextures(CARD_POWER_BG_GREEN_L, CARD_POWER_BG_BLUE_L);
         GREEN_PURPLE_DUAL_TEXTURE_POWER_L = MergeTextures(CARD_POWER_BG_GREEN_L, CARD_POWER_BG_PURPLE_L);
         BLUE_PURPLE_DUAL_TEXTURE_POWER_L = MergeTextures(CARD_POWER_BG_BLUE_L, CARD_POWER_BG_PURPLE_L);
+
+        // SETTINGS HERE
+
+        ModPanel settingsPanel = new ModPanel();
+        ModSliderBetter cardChanceSlider = new ModSliderBetter(CardCrawlGame.languagePack.getUIString(makeID("Settings")).TEXT[0],
+                650.0f, 700.0f,
+                1.0f, 100.0f, (float)settingsSecondaryRewardChance,
+                "%.0f",
+                settingsPanel,
+                (slider) -> {
+                    settingsSecondaryRewardChance = (int)slider.getValue();
+                    try {
+                        modConfig.setInt("secondarychance", settingsSecondaryRewardChance);
+                        modConfig.save();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                });
+
+        settingsPanel.addUIElement(cardChanceSlider);
+
+        BaseMod.registerModBadge(badgeTexture, info.Name, GeneralUtils.arrToString(info.Authors), info.Description, settingsPanel);
 
         // SAVABLE HERE
 

@@ -64,5 +64,10 @@
       "What character is aiding you?",
       "None"
     ]
+  },
+  "${modID}:Settings": {
+    "TEXT": [
+      "Other color reward chance"
+    ]
   }
 }

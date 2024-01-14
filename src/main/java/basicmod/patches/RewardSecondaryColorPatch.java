@@ -12,8 +12,6 @@ import static basicmod.HugYouColors.*;
 
 public class RewardSecondaryColorPatch {
 
-    private static final int PRIMARY_CHANCE = 75; //chance in % to get the primary color. Otherwise, its secondary color.
-
     @SpirePatch(
             clz = AbstractDungeon.class,
             method = "getCard",
@@ -23,7 +21,7 @@ public class RewardSecondaryColorPatch {
 
         public static SpireReturn<AbstractCard> Prefix(AbstractCard.CardRarity rarity, Random rng) {
             if (!currentRunActive) return SpireReturn.Continue();
-            if (rng.random(99) >= (100-PRIMARY_CHANCE)) return SpireReturn.Continue();
+            if (rng.random(99) >= settingsSecondaryRewardChance) return SpireReturn.Continue();
 
             switch (rarity) {
                 case COMMON:
@@ -50,7 +48,7 @@ public class RewardSecondaryColorPatch {
 
         public static SpireReturn<AbstractCard> Prefix(AbstractCard.CardRarity rarity) {
             if (!currentRunActive) return SpireReturn.Continue();
-            if (AbstractDungeon.cardRng.random(99) >= (100-PRIMARY_CHANCE)) return SpireReturn.Continue();
+            if (AbstractDungeon.cardRng.random(99) >= settingsSecondaryRewardChance) return SpireReturn.Continue();
 
             switch (rarity) {
                 case COMMON:
@@ -76,7 +74,7 @@ public class RewardSecondaryColorPatch {
 
         public static SpireReturn<AbstractCard> Prefix(AbstractCard.CardRarity rarity) {
             if (!currentRunActive) return SpireReturn.Continue();
-            if (MathUtils.random(99) >= (100-PRIMARY_CHANCE)) return SpireReturn.Continue();
+            if (MathUtils.random(99) >= settingsSecondaryRewardChance) return SpireReturn.Continue();
 
             switch (rarity) {
                 case COMMON:
@@ -139,7 +137,7 @@ public class RewardSecondaryColorPatch {
 
             if (rarity == AbstractCard.CardRarity.CURSE) return SpireReturn.Continue();
 
-            if ((useRng ? AbstractDungeon.cardRng.random(99) : MathUtils.random(99)) >= (100-PRIMARY_CHANCE)) return SpireReturn.Continue();
+            if ((useRng ? AbstractDungeon.cardRng.random(99) : MathUtils.random(99)) >= settingsSecondaryRewardChance) return SpireReturn.Continue();
 
             return SpireReturn.Return(getCardFromPool(rarity, type, useRng));
         }
