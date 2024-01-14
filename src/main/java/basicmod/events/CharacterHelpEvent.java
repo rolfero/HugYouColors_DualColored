@@ -69,7 +69,7 @@ public class CharacterHelpEvent  extends PhasedEvent {
                 room.rewards.add(new RewardItem(RelicLibrary.getRelic(relicID).makeCopy()));
             }
 
-        }));
+        }).setNextKey("CombatEnd"));
 
         transitionKey("EventStart"); //starting point
     }

@@ -61,7 +61,7 @@ public class EvokeHookPatch {
     private static class Locator extends SpireInsertLocator {
         public int[] Locate(CtBehavior ctMethodToPatch) throws CannotCompileException, PatchingException {
             Matcher finalMatcher = new Matcher.NewExprMatcher(EmptyOrbSlot.class);
-            return LineFinder.findInOrder(ctMethodToPatch, new ArrayList<Matcher>(), finalMatcher);
+            return LineFinder.findInOrder(ctMethodToPatch, new ArrayList<>(), finalMatcher);
         }
     }
 

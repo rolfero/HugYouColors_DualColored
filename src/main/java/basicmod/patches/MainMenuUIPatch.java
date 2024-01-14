@@ -75,33 +75,49 @@ public class MainMenuUIPatch {
     public static class RenderCheckboxPatch {
         @SpirePostfixPatch
         public static void renderCheckbox(CharacterSelectScreen __instance, SpriteBatch sb, boolean ___anySelected) {
-            if (___anySelected) {
-                Hitbox hb = HitboxField.hitbox.get(__instance);
-                float checkBoxX = getCheckboxX();
+            if (!___anySelected) return;
 
-                sb.draw(ImageMaster.OPTION_TOGGLE, checkBoxX, hb.cY - 16.0F, 16.0F, 16.0F, 32.0F, 32.0F, Settings.scale, Settings.scale, 0.0F, 0, 0, 32, 32, false, false);
-
-                FontHelper.renderFontCentered(sb, FontHelper.buttonLabelFont, HugYouColors.getActiveConfig() ? TEXT[0] : TEXT[1], checkBoxX + 30.0F * Settings.scale + getTextWidth(TEXT[0]) / 2.0F + 16.0F, hb.cY, hb.hovered ? Settings.GREEN_TEXT_COLOR : Settings.GOLD_COLOR, 0.75f);
-
-                if (hb.hovered && !HugYouColors.subColorMenu.dropdown.isOpen) {
-                    TipHelper.renderGenericTip((float) InputHelper.mX + 64.0F * Settings.scale, (float) InputHelper.mY + 24.0F * Settings.scale, TEXT[2], HugYouColors.getActiveConfig() ? TEXT[3] : TEXT[4]);
-                }
-
-                if ((HugYouColors.getActiveConfig() && HugYouColors.getConfigDualSet()) || (!HugYouColors.getActiveConfig() && HugYouColors.getConfigDualAll())) {
-                    sb.setColor(Color.WHITE);
-                    sb.draw(ImageMaster.OPTION_TOGGLE_ON, checkBoxX, hb.cY - 16.0F, 16.0F, 16.0F, 32.0F, 32.0F, Settings.scale, Settings.scale, 0.0F, 0, 0, 32, 32, false, false);
-                }
-
-                hb.render(sb);
+            if (getChosenPlayer(__instance) != null && HugYouColors.playerSecondary != null) {
+                if (!BaseMod.isBaseGameCharacter(getChosenPlayer(__instance)) || !BaseMod.isBaseGameCharacter(HugYouColors.playerSecondary))
+                    return;
             }
+
+            Hitbox hb = HitboxField.hitbox.get(__instance);
+            float checkBoxX = getCheckboxX();
+
+            sb.draw(ImageMaster.OPTION_TOGGLE, checkBoxX, hb.cY - 16.0F, 16.0F, 16.0F, 32.0F, 32.0F, Settings.scale, Settings.scale, 0.0F, 0, 0, 32, 32, false, false);
+
+            FontHelper.renderFontCentered(sb, FontHelper.buttonLabelFont, HugYouColors.getActiveConfig() ? TEXT[0] : TEXT[1], checkBoxX + 30.0F * Settings.scale + getTextWidth(TEXT[0]) / 2.0F + 16.0F, hb.cY, hb.hovered ? Settings.GREEN_TEXT_COLOR : Settings.GOLD_COLOR, 0.75f);
+
+            if (hb.hovered && !HugYouColors.subColorMenu.dropdown.isOpen) {
+                TipHelper.renderGenericTip((float) InputHelper.mX + 64.0F * Settings.scale, (float) InputHelper.mY + 24.0F * Settings.scale, TEXT[2], HugYouColors.getActiveConfig() ? TEXT[3] : TEXT[4]);
+            }
+
+            if ((HugYouColors.getActiveConfig() && HugYouColors.getConfigDualSet()) || (!HugYouColors.getActiveConfig() && HugYouColors.getConfigDualAll())) {
+                sb.setColor(Color.WHITE);
+                sb.draw(ImageMaster.OPTION_TOGGLE_ON, checkBoxX, hb.cY - 16.0F, 16.0F, 16.0F, 32.0F, 32.0F, Settings.scale, Settings.scale, 0.0F, 0, 0, 32, 32, false, false);
+            }
+
+            hb.render(sb);
         }
     }
+
+    public static AbstractPlayer getChosenPlayer(CharacterSelectScreen characterSelectScreen) {
+        for (CharacterOption characterOption : characterSelectScreen.options) {
+            if (characterOption.selected) return characterOption.c;
+        }
+        return null;
+    }
+
     @SpirePatch(clz = CharacterSelectScreen.class, method = "updateAscensionToggle")
     public static class UpdateCheckboxPatch {
         @SpirePostfixPatch
         public static void updateCheckbox(CharacterSelectScreen __instance, SeedPanel ___seedPanel, boolean ___anySelected) {
-            if (!___anySelected) {
-                return;
+            if (!___anySelected) return;
+
+            if (getChosenPlayer(__instance) != null && HugYouColors.playerSecondary != null) {
+                if (!BaseMod.isBaseGameCharacter(getChosenPlayer(__instance)) || !BaseMod.isBaseGameCharacter(HugYouColors.playerSecondary))
+                    return;
             }
 
             Hitbox hb = HitboxField.hitbox.get(__instance);

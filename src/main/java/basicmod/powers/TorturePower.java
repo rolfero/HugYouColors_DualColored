@@ -30,4 +30,9 @@ public class TorturePower extends BasePower implements BetterOnApplyPowerPower {
         }
         return stackAmount;
     }
+
+    @Override
+    public void updateDescription() {
+        this.description = DESCRIPTIONS[0];
+    }
 }

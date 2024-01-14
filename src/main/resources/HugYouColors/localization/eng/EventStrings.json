@@ -18,7 +18,7 @@
       "Select card to remove. (You can also stick extra text like this in here.)"
     ]
   },
-  "${ModID}:CharacterHelpEvent": {
+  "${modID}:CharacterHelpEvent": {
     "NAME": "Battle Nearby",
     "DESCRIPTIONS": [
       "There is a fight nearby. One of the combatants is your #yally - ",

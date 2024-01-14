@@ -24,14 +24,14 @@ public class Plethora extends DualCard {
 
     private static final int MAGIC = 1;
     private static final int INC = 1;
-    private static final int UPG_INC = 1;
+    private static final int UPG_MAGIC = 1;
 
 
 
     public Plethora() {
         super(cardInfo, CardColor.BLUE, CardColor.PURPLE); //change this to super(cardInfo, true); for updating description
-        setMagic(MAGIC);
-        setCustomVar("DRAW_INCREASE", INC, UPG_INC);
+        setMagic(MAGIC, UPG_MAGIC);
+        setCustomVar("DRAW_INCREASE", INC);
         setSelfRetain(true);
     }
 

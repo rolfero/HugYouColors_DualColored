@@ -34,4 +34,9 @@ public class UpgradeNextPlayedCardPower extends BasePower {
         if (!isPlayer) return;
         addToBot(new RemoveSpecificPowerAction(owner, owner, this));
     }
+
+    @Override
+    public void updateDescription() {
+        this.description = this.amount == 1 ? DESCRIPTIONS[0] : DESCRIPTIONS[1] + this.amount + DESCRIPTIONS[2];
+    }
 }

@@ -28,7 +28,7 @@ public class DoNotWorry extends DualCard {
     public static final String ID = makeID(cardInfo.baseId);
 
     public static final int BLOCK = 21;
-    public static final int UPG_BLOCK = 6;
+    public static final int UPG_BLOCK = 5;
 
     
     public DoNotWorry() {

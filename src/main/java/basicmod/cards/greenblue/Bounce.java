@@ -26,7 +26,7 @@ public class Bounce extends DualCard {
     
     public static final String ID = makeID(cardInfo.baseId);
     private static final int DAMAGE = 6;
-    private static final int UPG_DAMAGE = 4;
+    private static final int UPG_DAMAGE = 3;
 
     
     public Bounce() {

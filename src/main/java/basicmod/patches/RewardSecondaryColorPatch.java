@@ -1,6 +1,5 @@
 package basicmod.patches;
 
-import basicmod.HugYouColors;
 import com.badlogic.gdx.math.MathUtils;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpireReturn;

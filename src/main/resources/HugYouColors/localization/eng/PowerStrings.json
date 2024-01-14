@@ -8,7 +8,9 @@
   "${modID}:UpgradeNextPlayedCardPower": {
     "NAME": "Upgrade Next Played Card",
     "DESCRIPTIONS": [
-      "Your next played cards are upgraded after being played."
+      "The next card you play is upgraded after being played.",
+      "Upgrade the next ",
+      " cards after being played."
     ]
   },
   "${modID}:StayOnTargetPower": {
@@ -21,7 +23,10 @@
   "${modID}:ToxicityPower": {
     "NAME": "Toxicity",
     "DESCRIPTIONS": [
-      "Whenever you deal damage with an attack, the target loses health equal to their total poison, weak, and vulnerable."
+      "At the start of your turn, add ",
+      " Slimed to your draw pile. NL Slimed applies ",
+      " Poison to all enemies for each Slimed played this combat. NL Currently played ",
+      " Slimed."
     ]
   },
   "${modID}:BuildPower": {
@@ -47,14 +52,18 @@
   "${modID}:ProductivityPower": {
     "NAME": "Productivity",
     "DESCRIPTIONS": [
-      "The first time you play a Power card each turn, gain ",
+      "The first time you play a Power card each turn, exhaust a random card and gain 1 Focus.",
+      "The first time you play a Power card each turn, exhaust ",
+      " random cards and gain ",
       " Focus."
     ]
   },
   "${modID}:ProductivityUpgradedPower": {
     "NAME": "Productivity",
     "DESCRIPTIONS": [
-      "Whenever you play a Power card, gain ",
+      "Whenever you play a Power card, exhaust a card and gain 1 Focus.",
+      "Whenever you play a Power card, exhaust ",
+      " cards and gain ",
       " Focus."
     ]
   },
@@ -66,11 +75,12 @@
       " times as much damage."
     ]
   },
-  "${modID}:ArcheologyPower": {
-    "NAME": "Archeology",
+  "${modID}:FreeCardPower": {
+    "NAME": "Free Card",
     "DESCRIPTIONS": [
-      "At the start of your turn, shuffle all Claws from your discard pile into your draw pile. If there are none, instead add ",
-      " Claw into your discard pile."
+      "Your next card is free to play.",
+      "Your next ",
+      " cards are free to play."
     ]
   },
   "${modID}:LevitatePower": {
@@ -97,21 +107,29 @@
   "${modID}:StratagemPower": {
     "NAME": "Stratagem",
     "DESCRIPTIONS": [
-      "At the start of your turn, add ",
-      " Smite or Safety to your hand."
+      "At the start of your turn, choose ",
+      " Smite or Safety to add to your hand."
     ]
   },
   "${modID}:StratagemUpgradedPower": {
     "NAME": "Stratagem+",
     "DESCRIPTIONS": [
-      "At the start of your turn, add ",
-      " Smite, Safety or Insight to your hand."
+      "At the start of your turn, choose ",
+      " Smite, Safety or Insight to add to your hand."
     ]
   },
   "${modID}:TorturePower": {
     "NAME": "Torture",
     "DESCRIPTIONS": [
       "While you are in Wrath, you apply and suffer double debuffs."
+    ]
+  },
+  "${modID}:SynchronizationPower": {
+    "NAME": "Synchronization",
+    "DESCRIPTIONS": [
+      "At the end of your turn, hugyoucolors:Sync.",
+      "At the end of your turn, hugyoucolors:Sync ",
+      " times."
     ]
   }
 }

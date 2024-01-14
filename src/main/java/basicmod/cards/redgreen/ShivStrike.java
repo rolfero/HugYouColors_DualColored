@@ -30,14 +30,14 @@ public class ShivStrike extends DualCard {
     public static final String ID = makeID(cardInfo.baseId);
 
     private static final int DAMAGE = 2;
-    private static final int UPG_MAGIC = 1;
+    private static final int UPG_DAMAGE = 1;
     private static final int MAGIC = 2;
 
     
     public ShivStrike() {
         super(cardInfo, CardColor.RED, CardColor.GREEN); //change this to super(cardInfo, true); for updating description
-        setDamage(DAMAGE);
-        setMagic(MAGIC, UPG_MAGIC);
+        setDamage(DAMAGE, UPG_DAMAGE);
+        setMagic(MAGIC);
         tags.add(CardTags.STRIKE);
         if (AbstractDungeon.player != null && AbstractDungeon.player.hasPower("Accuracy")) {
             this.baseDamage += (AbstractDungeon.player.getPower("Accuracy")).amount;

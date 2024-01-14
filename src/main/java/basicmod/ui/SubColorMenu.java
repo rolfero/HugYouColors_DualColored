@@ -4,14 +4,9 @@ import basemod.CustomCharacterSelectScreen;
 import basemod.ReflectionHacks;
 import basemod.patches.com.megacrit.cardcrawl.screens.options.DropdownMenu.DropdownColoring;
 import basicmod.HugYouColors;
-import basicmod.patches.MainMenuUIPatch;
 import com.badlogic.gdx.graphics.Color;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.FontHelper;
-import com.megacrit.cardcrawl.helpers.Hitbox;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.screens.charSelect.CharacterOption;
 import com.megacrit.cardcrawl.screens.charSelect.CharacterSelectScreen;
@@ -38,7 +33,7 @@ public class SubColorMenu {
 
     
     public SubColorMenu() {
-        currentChoice = 0;
+        currentChoice = 1;
     }
 
     public ArrayList<CharacterOption> getCharacterOptionList(CharacterSelectScreen characterSelectScreen) {
@@ -105,8 +100,6 @@ public class SubColorMenu {
             HugYouColors.playerSecondary = getCharacterOptionList(characterSelectScreen).get(i-1).c;
         }
     }
-
-
 
     public void update() {
         dropdown.update();

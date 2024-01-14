@@ -31,7 +31,6 @@ public class Productivity extends DualCard {
     public Productivity() {
         super(cardInfo, CardColor.RED, CardColor.BLUE); //change this to super(cardInfo, true); for updating description
         setMagic(MAGIC);
-        setEthereal(true, false);
     }
 
     @Override

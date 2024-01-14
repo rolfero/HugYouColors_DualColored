@@ -23,7 +23,7 @@ public class Shielded extends DualCard {
     
     public static final String ID = makeID(cardInfo.baseId);
     private static final int BLOCK = 14;
-    private static final int UPG_BLOCK = 6;
+    private static final int UPG_BLOCK = 5;
 
     
     public Shielded() {

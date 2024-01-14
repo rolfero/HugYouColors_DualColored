@@ -3,6 +3,7 @@ package basicmod.cards.redblue;
 import basicmod.HugYouColors;
 import basicmod.cards.DualCard;
 import basicmod.util.CardInfo;
+import com.megacrit.cardcrawl.actions.common.LoseHPAction;
 import com.megacrit.cardcrawl.actions.defect.ChannelAction;
 import com.megacrit.cardcrawl.actions.defect.IncreaseMaxOrbAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -24,19 +25,19 @@ public class ColdSphere extends DualCard {
 
     
     public static final String ID = makeID(cardInfo.baseId);
-    private static final int FROST = 1;
-    private static final int MAX_ORBS = 1;
+    private static final int MAGIC = 1;
 
     
     public ColdSphere() {
         super(cardInfo, CardColor.RED, CardColor.BLUE); //change this to super(cardInfo, true); for updating description
-        setMagic(FROST);
+        setMagic(MAGIC);
         setEthereal(true, false);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new IncreaseMaxOrbAction(MAX_ORBS));
+        addToBot(new LoseHPAction(p, p, magicNumber));
+        addToBot(new IncreaseMaxOrbAction(magicNumber));
         for (int i=0; i<magicNumber; ++i) {
             addToBot(new ChannelAction(new Frost()));
         }

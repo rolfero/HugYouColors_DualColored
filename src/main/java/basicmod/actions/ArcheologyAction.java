@@ -8,6 +8,8 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 import java.util.ArrayList;
 
+//TODO: Remove
+@Deprecated
 public class ArcheologyAction extends AbstractGameAction {
 
     public ArcheologyAction(int amt) {

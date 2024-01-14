@@ -43,7 +43,7 @@ public class GlobalityAction extends AbstractGameAction {
                 AbstractCard c;
                 int retrievedCards = 0;
                 for(Iterator<AbstractCard> var1 = AbstractDungeon.handCardSelectScreen.selectedCards.group.iterator(); var1.hasNext(); this.p.hand.moveToExhaustPile(c)) {
-                    c = (AbstractCard)var1.next();
+                    c = var1.next();
                     if (c.costForTurn == -1) {
                         this.addToTop(new GainEnergyAction(EnergyPanel.getCurrentEnergy()));
                     } else if (c.costForTurn > 0) {

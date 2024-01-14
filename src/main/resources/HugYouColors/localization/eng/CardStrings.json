@@ -15,7 +15,7 @@
   },
   "${modID}:ShivStrike": {
     "NAME": "Shiv Strike",
-    "DESCRIPTION": "{@@}Deal !D! damage {!Upgrades!|0=twice.|1=three times.}"
+    "DESCRIPTION": "Deal !D! damage twice."
   },
   "${modID}:OakenShield": {
     "NAME": "Oaken Shield",
@@ -67,7 +67,7 @@
   },
   "${modID}:Toxicity": {
     "NAME": "Toxicity",
-    "DESCRIPTION": "Whenever you deal damage with an attack, the target loses health equal to their total Poison, Weak, and Vulnerable."
+    "DESCRIPTION": "At the start of your turn, add a *Slimed to your deck. NL *Slimed applies !M! Poison to all enemies for each *Slimed played this combat."
   },
   "${modID}:Raid": {
     "NAME": "Raid",
@@ -87,7 +87,7 @@
   },
   "${modID}:Inventory": {
     "NAME": "Inventory",
-    "DESCRIPTION": "{@@}Draw X cards and gain X Orb slots. {!Upgrades!|0=NL Exhaust.}"
+    "DESCRIPTION": "{@@}Gain X Orb slots. NL Next turn, draw X cards.{!Upgrades!|0= NL Exhaust.}"
   },
   "${modID}:VoltaicBolt": {
     "NAME": "Voltaic Bolt",
@@ -107,7 +107,7 @@
   },
   "${modID}:ColdSphere": {
     "NAME": "Cold Sphere",
-    "DESCRIPTION": "{@@}Gain an Orb Slot. NL Channel !M! Frost. {!Upgrades!|0=NL Ethereal.}"
+    "DESCRIPTION": "{@@}Lose !M! HP. NL Gain an Orb Slot. NL Channel !M! Frost. {!Upgrades!|0=NL Ethereal.}"
   },
   "${modID}:Bionic": {
     "NAME": "Bionic",
@@ -123,11 +123,11 @@
   },
   "${modID}:Globality": {
     "NAME": "Globality",
-    "DESCRIPTION": "Exhaust any number of cards in your hand. Draw that many cards and gain [E] equal to their cost."
+    "DESCRIPTION": "{@@}Exhaust any number of cards in your hand. Draw that many cards and gain [E] equal to their cost.{!Upgrades!|0= NL Exhaust.}"
   },
   "${modID}:Productivity": {
     "NAME": "Productivity",
-    "DESCRIPTION": "{@@}{!Upgrades!|0=The first time|1=Whenever} you play a Power card{!Upgrades!|0= each turn}, gain !M! Focus.{!Upgrades!|0= Ethereal.}"
+    "DESCRIPTION": "{@@}{!Upgrades!|0=The first time|1=Whenever} you play a Power card{!Upgrades!|0= each turn}, Exhaust a{!Upgrades!|0= random} card and gain !M! Focus. NL Ethereal."
   },
   "${modID}:Shielded": {
     "NAME": "Shielded",
@@ -211,7 +211,7 @@
   },
   "${modID}:Plethora": {
     "NAME": "Plethora",
-    "DESCRIPTION": "{@@}Retain. NL Draw {!M!|1=a|>1=!M!} card{!M!|>1=s}. NL When Retained, increase draw by {!Upgrades!|0=1|1=2} this combat."
+    "DESCRIPTION": "{@@}Retain. NL Draw {!M!|1=a|>1=!M!} card{!M!|>1=s}. NL When Retained, increase draw by 1 this combat."
   },
   "${modID}:Breach": {
     "NAME": "Breach",
@@ -287,7 +287,7 @@
   },
   "${modID}:Stratagem": {
     "NAME": "Stratagem",
-    "DESCRIPTION": "{@@}At the start of your turn, add a *Smite{!Upgrades!|0= or |1=, }*Safety{!Upgrades!|1= or *Insight} to your hand."
+    "DESCRIPTION": "{@@}At the start of your turn, choose a *Smite{!Upgrades!|0= or |1=, }*Safety{!Upgrades!|1= or *Insight} to add to your hand."
   },
   "${modID}:Gambit": {
     "NAME": "Gambit",
@@ -327,11 +327,11 @@
   },
   "${modID}:Slipping": {
     "NAME": "Slipping",
-    "DESCRIPTION": "{@@}{!Upgrades!|1=Retain. NL }At the start of your turn, gain !M! Dexterity. NL This card starts in your discard pile.{!Upgrades!|0= NL Ethereal.}"
+    "DESCRIPTION": "{@@}At the start of your turn, gain !M! Dexterity. NL This card starts in your discard pile.{!Upgrades!|0= NL Ethereal.}"
   },
   "${modID}:Archeology": {
     "NAME": "Archeology",
-    "DESCRIPTION": "At the start of your turn, shuffle all *Claws from your discard pile into your draw pile. If there are none, instead add a *Claw into your discard pile."
+    "DESCRIPTION": "The next card you play is free."
   },
   "${modID}:Blight": {
     "NAME": "Blight",

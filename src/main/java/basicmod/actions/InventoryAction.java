@@ -1,18 +1,19 @@
 package basicmod.actions;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.DrawCardAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.defect.IncreaseMaxOrbAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.powers.DrawCardNextTurnPower;
 import com.megacrit.cardcrawl.relics.ChemicalX;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 
 public class InventoryAction extends AbstractGameAction {
 
-    private boolean freeToPlayOnce = false;
+    private final boolean freeToPlayOnce;
     private final AbstractPlayer p;
-    private int energyOnUse = -1;
+    private final int energyOnUse;
 
     
     public InventoryAction(AbstractPlayer p, boolean freeToPlayOnce, int energyOnUse) {
@@ -38,7 +39,7 @@ public class InventoryAction extends AbstractGameAction {
         }
 
         if (effect > 0) {
-            addToTop(new DrawCardAction(this.p, effect));
+            addToTop(new ApplyPowerAction(this.p, this.p, new DrawCardNextTurnPower(this.p, effect), effect));
             addToTop(new IncreaseMaxOrbAction(effect));
 
             if (!this.freeToPlayOnce) {

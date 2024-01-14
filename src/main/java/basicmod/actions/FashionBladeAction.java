@@ -12,9 +12,9 @@ import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 
 public class FashionBladeAction extends AbstractGameAction {
 
-    private boolean freeToPlayOnce = false;
+    private final boolean freeToPlayOnce;
     private final AbstractPlayer p;
-    private int energyOnUse = -1;
+    private final int energyOnUse;
 
     private final int accMult;
 

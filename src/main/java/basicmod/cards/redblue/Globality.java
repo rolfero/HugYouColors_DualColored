@@ -26,7 +26,7 @@ public class Globality extends DualCard {
     
     public Globality() {
         super(cardInfo, CardColor.RED, CardColor.BLUE); //change this to super(cardInfo, true); for updating description
-        setCostUpgrade(2);
+        setExhaust(true, false);
     }
 
     @Override

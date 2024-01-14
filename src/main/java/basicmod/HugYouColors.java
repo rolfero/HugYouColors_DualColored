@@ -3,6 +3,7 @@ package basicmod;
 import basemod.AutoAdd;
 import basemod.BaseMod;
 import basemod.abstracts.CustomSavable;
+import basemod.eventUtil.AddEventParams;
 import basemod.interfaces.*;
 import basicmod.cards.DualCard;
 import basicmod.dynamicvariables.HalfDamageVariable;
@@ -51,11 +52,7 @@ public class HugYouColors implements
         EditCardsSubscriber,
         EditKeywordsSubscriber,
         PostInitializeSubscriber,
-        StartGameSubscriber
-        {
-
-    //TODO: SecondaryCharacter relics should be discoverable
-    //TODO: Show which character is aiding
+        StartGameSubscriber {
 
     public static ModInfo info;
     public static String modID; //Edit your pom.xml to change this
@@ -79,13 +76,15 @@ public class HugYouColors implements
 
     @Override
     public void receiveStartGame() {
-        if (!newGameStarted) {
-            if (HugYouColors.getActiveConfig()) {
+        if (HugYouColors.getActiveConfig()) {
+            if (!newGameStarted) {
                 int newOrbs = (AbstractDungeon.player.masterMaxOrbs + HugYouColors.playerSecondary.masterMaxOrbs + 1) / 2;
                 AbstractDungeon.player.masterMaxOrbs = Math.max(newOrbs, AbstractDungeon.player.masterMaxOrbs);
             }
+
             newGameStarted = true;
         }
+
     }
 
     public static class Enums {
@@ -133,38 +132,53 @@ public class HugYouColors implements
     private static final String BG_SKILL_P = characterPath("cardback/bg_skill_p.png");
     private static final String BG_POWER = characterPath("cardback/bg_power.png");
     private static final String BG_POWER_P = characterPath("cardback/bg_power_p.png");
-    private static final String ENERGY_ORB = characterPath("cardback/energy_orb.png");
-    private static final String ENERGY_ORB_P = characterPath("cardback/energy_orb_p.png");
-    private static final String SMALL_ORB = characterPath("cardback/small_orb.png");
+    private static final String ENERGY_ORB_RG_P = characterPath("cardback/energy_orb_rg_p.png");
+    private static final String ENERGY_ORB_RB_P = characterPath("cardback/energy_orb_rb_p.png");
+    private static final String ENERGY_ORB_RP_P = characterPath("cardback/energy_orb_rp_p.png");
+    private static final String ENERGY_ORB_GB_P = characterPath("cardback/energy_orb_gb_p.png");
+    private static final String ENERGY_ORB_GP_P = characterPath("cardback/energy_orb_gp_p.png");
+    private static final String ENERGY_ORB_BP_P = characterPath("cardback/energy_orb_bp_p.png");
+    private static final String ENERGY_ORB_RG = characterPath("cardback/energy_orb_rg.png");
+    private static final String ENERGY_ORB_RB = characterPath("cardback/energy_orb_rb.png");
+    private static final String ENERGY_ORB_RP = characterPath("cardback/energy_orb_rp.png");
+    private static final String ENERGY_ORB_GB = characterPath("cardback/energy_orb_gb.png");
+    private static final String ENERGY_ORB_GP = characterPath("cardback/energy_orb_gp.png");
+    private static final String ENERGY_ORB_BP = characterPath("cardback/energy_orb_bp.png");
+    private static final String SMALL_ORB_RG = characterPath("cardback/small_orb_rg.png");
+    private static final String SMALL_ORB_RB = characterPath("cardback/small_orb_rb.png");
+    private static final String SMALL_ORB_RP = characterPath("cardback/small_orb_rp.png");
+    private static final String SMALL_ORB_GB = characterPath("cardback/small_orb_gb.png");
+    private static final String SMALL_ORB_GP = characterPath("cardback/small_orb_gp.png");
+    private static final String SMALL_ORB_BP = characterPath("cardback/small_orb_bp.png");
 
     //This will be called by ModTheSpire because of the @SpireInitializer annotation at the top of the class.
     
     public static void initialize() {
         new HugYouColors();
         BaseMod.addColor(Enums.CARD_DUAL_RG_COLOR, Color.WHITE,
-                BG_ATTACK, BG_SKILL, BG_POWER, ENERGY_ORB,
-                BG_ATTACK_P, BG_SKILL_P, BG_POWER_P, ENERGY_ORB_P,
-                SMALL_ORB);
+                BG_ATTACK, BG_SKILL, BG_POWER, ENERGY_ORB_RG,
+                BG_ATTACK_P, BG_SKILL_P, BG_POWER_P, ENERGY_ORB_RG_P,
+                SMALL_ORB_RG);
         BaseMod.addColor(Enums.CARD_DUAL_RB_COLOR, Color.WHITE,
-                BG_ATTACK, BG_SKILL, BG_POWER, ENERGY_ORB,
-                BG_ATTACK_P, BG_SKILL_P, BG_POWER_P, ENERGY_ORB_P,
-                SMALL_ORB);
+                BG_ATTACK, BG_SKILL, BG_POWER, ENERGY_ORB_RB,
+                BG_ATTACK_P, BG_SKILL_P, BG_POWER_P, ENERGY_ORB_RB_P,
+                SMALL_ORB_RB);
         BaseMod.addColor(Enums.CARD_DUAL_RP_COLOR, Color.WHITE,
-                BG_ATTACK, BG_SKILL, BG_POWER, ENERGY_ORB,
-                BG_ATTACK_P, BG_SKILL_P, BG_POWER_P, ENERGY_ORB_P,
-                SMALL_ORB);
+                BG_ATTACK, BG_SKILL, BG_POWER, ENERGY_ORB_RP,
+                BG_ATTACK_P, BG_SKILL_P, BG_POWER_P, ENERGY_ORB_RP_P,
+                SMALL_ORB_RP);
         BaseMod.addColor(Enums.CARD_DUAL_GB_COLOR, Color.WHITE,
-                BG_ATTACK, BG_SKILL, BG_POWER, ENERGY_ORB,
-                BG_ATTACK_P, BG_SKILL_P, BG_POWER_P, ENERGY_ORB_P,
-                SMALL_ORB);
+                BG_ATTACK, BG_SKILL, BG_POWER, ENERGY_ORB_GB,
+                BG_ATTACK_P, BG_SKILL_P, BG_POWER_P, ENERGY_ORB_GB_P,
+                SMALL_ORB_GB);
         BaseMod.addColor(Enums.CARD_DUAL_GP_COLOR, Color.WHITE,
-                BG_ATTACK, BG_SKILL, BG_POWER, ENERGY_ORB,
-                BG_ATTACK_P, BG_SKILL_P, BG_POWER_P, ENERGY_ORB_P,
-                SMALL_ORB);
+                BG_ATTACK, BG_SKILL, BG_POWER, ENERGY_ORB_GP,
+                BG_ATTACK_P, BG_SKILL_P, BG_POWER_P, ENERGY_ORB_GP_P,
+                SMALL_ORB_GP);
         BaseMod.addColor(Enums.CARD_DUAL_BP_COLOR, Color.WHITE,
-                BG_ATTACK, BG_SKILL, BG_POWER, ENERGY_ORB,
-                BG_ATTACK_P, BG_SKILL_P, BG_POWER_P, ENERGY_ORB_P,
-                SMALL_ORB);
+                BG_ATTACK, BG_SKILL, BG_POWER, ENERGY_ORB_BP,
+                BG_ATTACK_P, BG_SKILL_P, BG_POWER_P, ENERGY_ORB_BP_P,
+                SMALL_ORB_BP);
 
         try {
             Properties defaults = new Properties();
@@ -231,41 +245,9 @@ public class HugYouColors implements
     public HugYouColors() {
         BaseMod.subscribe(this); //This will make BaseMod trigger all the subscribers at their appropriate times.
         logger.info(modID + " subscribed to BaseMod.");
-
-        /*
-         *
-         *
-         * Plans for the mod:
-         * Expands all colors with new cards.
-         * Creates Dual-Color cards.
-         * Gives a way of finding the dual color cards in-game.
-         ** How?
-         *** Maybe you can choose a secondary class, and then your card rewards are skewed in a certain way - and includes the dual colors.
-         **** Example 1: 2 cards are primary color, 1 card is secondary color (what to do with busted crown, etc)
-         **** Example 2: First, choose between 3 cards of primary color. If none suit you, you can get a card reward of your secondary color.
-         **** Example 3: An additional card is given as a choice, of the secondary color.
-         **** Example 4: You share the pool, but with skewed probability towards your primary color (70-30, maybe)
-         *** Maybe all dual cards are obtainable to both the classes that have it, just like normal. (Sort of boring, but the easiest probably.)
-         *
-         * I want to try with example 4.
-         *
-         * DONE: Allow you to pick your subcolor - DONE.
-         *  DONE: Save the subcolor (either base color or modded character) somehow. This needs to be a savable! Probably a string of either modid:name or The Silent etc.
-         *  DONE: -> skew card reward probability based on it. DONE.
-         *   DONE:   Card reward probability probably like: 60% primary, 20% dual, 20% secondary.
-         *          maybe more like 75% primary, 25% secondary - with both the primary and secondary card pool including the dual cards, which means they have a slightly bigger chance of occuring compared to any other singular card.
-         * DONE: Add DUAL COLOR CARDS to the game.
-         * DONE: Make DUAL COLOR CARDS come up if you chose the appropriate colors.
-         * SCRAPPED: Add COLOR cards to the game.
-         *
-         *
-         *
-         *
-         */
-
     }
 
-    public static SubColorMenu subColorMenu = new SubColorMenu();
+    public static final SubColorMenu subColorMenu = new SubColorMenu();
 
     public static AbstractPlayer playerSecondary;
 
@@ -450,14 +432,11 @@ public class HugYouColors implements
         //The information used is taken from your pom.xml file.
         BaseMod.registerModBadge(badgeTexture, info.Name, GeneralUtils.arrToString(info.Authors), info.Description, null);
 
-        BaseMod.addEvent(CharacterHelpEvent.ID, CharacterHelpEvent.class);
+        BaseMod.addEvent(new AddEventParams.Builder(CharacterHelpEvent.ID, CharacterHelpEvent.class).endsWithRewardsUI(true).create());
 
         secondaryCommonCardPool = new CardGroup(CardGroup.CardGroupType.CARD_POOL);
         secondaryUncommonCardPool = new CardGroup(CardGroup.CardGroupType.CARD_POOL);
         secondaryRareCardPool = new CardGroup(CardGroup.CardGroupType.CARD_POOL);
-
-        //Making some textures here apparently
-        //I think we're close!
 
         RED_GREEN_DUAL_TEXTURE_SKILL = MergeTextures(CARD_SKILL_BG_RED, CARD_SKILL_BG_GREEN);
         RED_BLUE_DUAL_TEXTURE_SKILL = MergeTextures(CARD_SKILL_BG_RED, CARD_SKILL_BG_BLUE);

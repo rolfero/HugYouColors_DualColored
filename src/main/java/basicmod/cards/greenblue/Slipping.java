@@ -32,7 +32,6 @@ public class Slipping extends DualCard {
         setMagic(MAGIC);
         GraveField.grave.set(this, true);
         setEthereal(true, false);
-        setSelfRetain(false, true);
     }
 
     @Override
