@@ -257,7 +257,6 @@ public class HugYouColors implements
     public static final SubColorMenu subColorMenu = new SubColorMenu();
 
     public static AbstractPlayer playerSecondary;
-
     
     public static AbstractPlayer.PlayerClass getSecondaryClass() {
         return playerSecondary.chosenClass;
