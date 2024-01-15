@@ -27,7 +27,7 @@ public class DoubleNextDamagePower extends BasePower {
                 @Override
                 public void update() {
                     amount = 0;
-                    isDone = true;
+                    this.isDone = true;
                 }
             });
         }

@@ -35,7 +35,7 @@ public class LevitateAction extends AbstractGameAction {
                 this.isDone = true;
                 return;
             } else {
-                AbstractDungeon.handCardSelectScreen.open(TEXT[0], 10, true);
+                AbstractDungeon.handCardSelectScreen.open(TEXT[0], 99, true, true);
                 this.tickDuration();
                 return;
             }

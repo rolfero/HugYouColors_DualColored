@@ -44,6 +44,8 @@ public class Bloodlust extends DualCard {
             @Override
             public void update() {
                 modifyCostForCombat(1);
+
+                this.isDone = true;
             }
         });
     }
