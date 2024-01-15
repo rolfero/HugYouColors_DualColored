@@ -40,6 +40,7 @@ public class Database extends DualCard {
             public void update() {
                 addToTop(new ApplyPowerAction(p, p, new LoseFocusPower(p, p.hand.size()), p.hand.size()));
                 addToTop(new ApplyPowerAction(p, p, new FocusPower(p, p.hand.size()), p.hand.size()));
+                this.isDone = true;
             }
         });
     }
