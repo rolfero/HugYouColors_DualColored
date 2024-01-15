@@ -75,6 +75,7 @@ public class HugYouColors implements
         return modID + ":" + id;
     }
 
+    //TODO: Can I strike through or otherwise remove the None: Dark part of Accord?
     public static boolean newGameStarted = false;
 
     @Override

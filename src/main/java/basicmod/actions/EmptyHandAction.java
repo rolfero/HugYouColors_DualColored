@@ -1,5 +1,6 @@
 package basicmod.actions;
 
+import basicmod.HugYouColors;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
@@ -12,8 +13,8 @@ import com.megacrit.cardcrawl.localization.UIStrings;
 
 public class EmptyHandAction extends AbstractGameAction {
 
-    private static final UIStrings uiStrings;
-    public static final String[] TEXT;
+    private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(HugYouColors.makeID("EmptyHandAction"));
+    private static final String[] TEXT = uiStrings.TEXT;
 
     public EmptyHandAction(AbstractCreature source, int amt) {
         this.setValues(AbstractDungeon.player, source, amt);
@@ -23,7 +24,7 @@ public class EmptyHandAction extends AbstractGameAction {
     @Override
     public void update() {
         if (this.duration == 0.5F) {
-            AbstractDungeon.handCardSelectScreen.open(this.amount > 1 ? TEXT[1] : TEXT[0], this.amount, true, true);
+            AbstractDungeon.handCardSelectScreen.open(TEXT[0], this.amount, true, true);
             this.addToBot(new WaitAction(0.25F));
             this.tickDuration();
         } else {
@@ -45,8 +46,4 @@ public class EmptyHandAction extends AbstractGameAction {
         }
     }
 
-    static {
-        uiStrings = CardCrawlGame.languagePack.getUIString("EmptyHandAction");
-        TEXT = uiStrings.TEXT;
-    }
 }

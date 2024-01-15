@@ -180,7 +180,6 @@ public class MainMenuUIPatch {
 
             if (obj.selected)
                 HugYouColors.subColorMenu.update();
-
         }
     }
 

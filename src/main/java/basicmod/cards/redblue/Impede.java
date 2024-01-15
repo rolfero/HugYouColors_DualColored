@@ -24,7 +24,7 @@ public class Impede extends DualCard {
     
     public static final String ID = makeID(cardInfo.baseId);
     private static final int BLOCK = 7;
-    private static final int UPG_BLOCK = 3;
+    private static final int UPG_BLOCK = 2;
     private static final int MAGIC = 1;
 
     

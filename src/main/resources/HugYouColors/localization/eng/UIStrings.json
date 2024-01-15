@@ -20,8 +20,7 @@
   },
   "${modID}:EmptyHandAction": {
     "TEXT": [
-      "Choose up to one card to discard",
-      "Choose any number of cards to discard"
+      "discard."
     ]
   },
   "${modID}:LevitateAction": {

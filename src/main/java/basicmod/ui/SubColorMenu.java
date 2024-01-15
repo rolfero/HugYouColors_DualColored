@@ -66,21 +66,20 @@ public class SubColorMenu {
         chooseColor(1); //First choice, maybe save this as last played or whatever
     }
 
-    public boolean isChosenCharacter(int i) {
-        if (i == 0) return !HugYouColors.getActiveConfig();
+    public boolean isMainChosenCharacter(int i) {
+        if (i == 0) return false;
         return getCharacterOptionList(characterSelectScreen).get(i-1).selected;
     }
 
     public Color getRowColor(int i) {
-
-        if (isChosenCharacter(i)) {
+        if (isMainChosenCharacter(i)) {
             return Color.DARK_GRAY;
         }
         return null;
     }
 
     public void chooseColor(int i) {
-        if (isChosenCharacter(i) && i != 0) {
+        if (isMainChosenCharacter(i)) {
             if (dropdown.rows.size() > 2) {
                 if (currentChoice == i && i == 1) {
                     dropdown.setSelectedIndex(2);

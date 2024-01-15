@@ -26,7 +26,6 @@ public class Synchronization extends DualCard {
 
     public Synchronization() {
         super(cardInfo, CardColor.BLUE, CardColor.PURPLE); //change this to super(cardInfo, true); for updating description
-        setCostUpgrade(1);
     }
 
     @Override

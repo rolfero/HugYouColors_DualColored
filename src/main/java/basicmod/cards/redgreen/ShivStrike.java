@@ -39,7 +39,12 @@ public class ShivStrike extends DualCard {
         setDamage(DAMAGE, UPG_DAMAGE);
         setMagic(MAGIC);
         tags.add(CardTags.STRIKE);
-        if (AbstractDungeon.player != null && AbstractDungeon.player.hasPower("Accuracy")) {
+        if (AbstractDungeon.player != null &&
+                (AbstractDungeon.currMapNode != null &&
+                        AbstractDungeon.currMapNode.room != null &&
+                        AbstractDungeon.currMapNode.room.monsters != null &&
+                        !AbstractDungeon.currMapNode.room.monsters.areMonstersBasicallyDead()) &&
+                AbstractDungeon.player.hasPower("Accuracy")) {
             this.baseDamage += (AbstractDungeon.player.getPower("Accuracy")).amount;
             this.damage = this.baseDamage;
         }

@@ -6,6 +6,7 @@ import basicmod.util.CardInfo;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.cards.blue.Stack;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -28,7 +29,26 @@ public class Tower extends DualCard {
     
     public Tower() {
         super(cardInfo, CardColor.GREEN, CardColor.BLUE); //change this to super(cardInfo, true); for updating description
-        setDamage(0);
+        if (AbstractDungeon.player != null) {
+            this.baseDamage = AbstractDungeon.player.discardPile.size();
+            if (this.upgraded) {
+                this.baseDamage += 3;
+            }
+        } else {
+            this.baseDamage = 0;
+        }
+
+        this.damage = this.baseDamage;
+    }
+
+    @Override
+    public void applyPowers() {
+        this.baseDamage = AbstractDungeon.player.discardPile.size();
+        if (this.upgraded) {
+            this.baseDamage += 3;
+        }
+        this.damage = this.baseDamage;
+        super.applyPowers();
     }
 
     @Override

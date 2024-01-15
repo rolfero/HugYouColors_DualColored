@@ -15,7 +15,7 @@
   },
   "${modID}:ShivStrike": {
     "NAME": "Shiv Strike",
-    "DESCRIPTION": "Deal !D! damage twice."
+    "DESCRIPTION": "{@@}Deal !D! damage twice."
   },
   "${modID}:OakenShield": {
     "NAME": "Oaken Shield",
@@ -279,7 +279,7 @@
   },
   "${modID}:Synchronization": {
     "NAME": "Synchronization",
-    "DESCRIPTION": "At the end of your turn, hugyoucolors:Sync."
+    "DESCRIPTION": "{@@}At the end of your turn,{!Upgrades!|0= if you have any empty Orb Slots,} hugyoucolors:Sync."
   },
   "${modID}:Splash": {
     "NAME": "Splash",
@@ -343,7 +343,7 @@
   },
   "${modID}:EmptyHand": {
     "NAME": "Empty Hand",
-    "DESCRIPTION": "{@@}Discard {!Upgrades!|0=up to one|1=any number of} card{!Upgrades!|1=s}. If you do, draw {!Upgrades!|0=a|1=that many} card{!Upgrades!|1=s}. NL Exit your Stance."
+    "DESCRIPTION": "{@@}Discard up to {!M!|1=one|>1=!M!} card{!M!|>1=s}. NL If you do, draw {!M!|1=a|>1=that many} card{!M!|>1=s}. NL Exit your Stance."
   },
   "${modID}:Perfect": {
     "NAME": "Perfect",
@@ -359,7 +359,7 @@
   },
   "${modID}:FashionBlade": {
     "NAME": "Fashion Blade",
-    "DESCRIPTION": "{@@}Add X Shivs to your hand. NL Your Shivs deal !M!X more damage."
+    "DESCRIPTION": "{@@}Add X Shivs to your hand. NL Your Shivs deal {!M!|>1=!M!}X more damage."
   },
   "${modID}:FinalStrike": {
     "NAME": "Final Strike",

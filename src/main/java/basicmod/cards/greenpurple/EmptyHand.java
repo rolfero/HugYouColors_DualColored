@@ -26,14 +26,18 @@ public class EmptyHand extends DualCard {
     
     public static final String ID = makeID(cardInfo.baseId);
 
+    public static final int MAGIC = 1;
+    public static final int UPG_MAGIC = 1;
+
     
     public EmptyHand() {
         super(cardInfo, CardColor.GREEN, CardColor.PURPLE); //change this to super(cardInfo, true); for updating description
+        setMagic(MAGIC, UPG_MAGIC);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new EmptyHandAction(p, this.upgraded ? 99 : 1));
+        addToBot(new EmptyHandAction(p, magicNumber));
         addToBot(new ChangeStanceAction(NeutralStance.STANCE_ID));
     }
 }

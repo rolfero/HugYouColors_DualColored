@@ -24,7 +24,7 @@ public class FashionBlade extends DualCard {
 
     public static final String ID = makeID(cardInfo.baseId);
 
-    private static final int MAGIC = 2;
+    private static final int MAGIC = 1;
     private static final int UPG_MAGIC = 1;
 
 

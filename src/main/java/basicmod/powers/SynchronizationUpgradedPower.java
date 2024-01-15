@@ -2,33 +2,26 @@ package basicmod.powers;
 
 import basicmod.HugYouColors;
 import basicmod.actions.SyncAction;
+import basicmod.cards.bluepurple.Accord;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.stances.NeutralStance;
 
 
-public class SynchronizationPower extends BasePower {
+public class SynchronizationUpgradedPower extends BasePower {
 
-    public static final String ID = HugYouColors.makeID("SynchronizationPower");
+    public static final String ID = HugYouColors.makeID("SynchronizationUpgradedPower");
 
-    
-    public SynchronizationPower(AbstractCreature owner, int amount) {
+
+    public SynchronizationUpgradedPower(AbstractCreature owner, int amount) {
         super(ID, PowerType.BUFF, false, owner, null, amount);
     }
 
     public void atEndOfTurn(boolean isPlayer) {
         if (!isPlayer) return;
         for (int i = 0; i < amount; ++i) {
-            addToBot(new AbstractGameAction() {
-                @Override
-                public void update() {
-                    if (AbstractDungeon.player.hasEmptyOrb()) {
-                        addToTop(new SyncAction());
-                    }
-                    this.isDone = true;
-                }
-            });
+            addToBot(new SyncAction());
         }
     }
 

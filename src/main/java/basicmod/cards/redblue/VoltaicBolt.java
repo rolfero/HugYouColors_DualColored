@@ -27,7 +27,6 @@ public class VoltaicBolt extends DualCard {
 
     public static final String ID = makeID(cardInfo.baseId);
     private static final int DAMAGE = 5;
-    private static final int UPG_DAMAGE = 2;
     private static final int MAGIC = 2;
     private static final int UPG_MAGIC = 1;
 
@@ -35,7 +34,7 @@ public class VoltaicBolt extends DualCard {
 
     public VoltaicBolt() {
         super(cardInfo, CardColor.RED, CardColor.BLUE); //change this to super(cardInfo, true); for updating description
-        setDamage(DAMAGE, UPG_DAMAGE);
+        setDamage(DAMAGE);
         setMagic(MAGIC, UPG_MAGIC);
     }
 

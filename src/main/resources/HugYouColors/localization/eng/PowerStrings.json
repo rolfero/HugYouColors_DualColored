@@ -125,8 +125,16 @@
   "${modID}:SynchronizationPower": {
     "NAME": "Synchronization",
     "DESCRIPTIONS": [
-      "At the end of your turn, hugyoucolors:Sync.",
-      "At the end of your turn, hugyoucolors:Sync ",
+      "At the end of your turn, if you have an empty orb slot, Sync.",
+      "At the end of your turn, while you have empty orb slots, Sync up to ",
+      " times."
+    ]
+  },
+  "${modID}:SynchronizationUpgradedPower": {
+    "NAME": "Synchronization+",
+    "DESCRIPTIONS": [
+      "At the end of your turn, Sync.",
+      "At the end of your turn, Sync ",
       " times."
     ]
   }

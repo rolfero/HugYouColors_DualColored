@@ -28,7 +28,7 @@ public class Gambit extends DualCard {
     
     public static final String ID = makeID(cardInfo.baseId);
 
-    private static final int DAMAGE = 3;
+    private static final int DAMAGE = 2;
     private static final int UPG_DAMAGE = 1;
 
     
