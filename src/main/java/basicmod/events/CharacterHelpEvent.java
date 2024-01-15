@@ -18,12 +18,13 @@ import com.megacrit.cardcrawl.helpers.RelicLibrary;
 import com.megacrit.cardcrawl.localization.EventStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.rewards.RewardItem;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
 import java.util.ArrayList;
 
 import static basicmod.HugYouColors.makeID;
 
-public class CharacterHelpEvent  extends PhasedEvent {
+public class CharacterHelpEvent extends PhasedEvent {
     public static final String ID = makeID("CharacterHelpEvent");
     private static final EventStrings eventStrings = CardCrawlGame.languagePack.getEventString(ID);
     private static final String[] DESCRIPTIONS = eventStrings.DESCRIPTIONS;
@@ -47,15 +48,11 @@ public class CharacterHelpEvent  extends PhasedEvent {
         }.addOption(OPTIONS[0], (i)->transitionKey("Combat")).addOption(OPTIONS[1], (i)->this.openMap()));
 
         registerPhase("Combat", new CombatPhase(AbstractDungeon.eliteMonsterList.remove(0)) {
-            boolean didReduceHealth = false;
             @Override
-            public void update() {
-                super.update();
-                if (didReduceHealth) return;
-                for (AbstractMonster m : AbstractDungeon.getMonsters().monsters) {
-                    AbstractDungeon.actionManager.addToTop(new LoseHPAction(m, AbstractDungeon.player, m.currentHealth/4));
-                }
-                didReduceHealth = false;
+            public boolean reopen(PhasedEvent phasedEvent) {
+                boolean b = super.reopen(phasedEvent);
+                AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.COMPLETE;
+                return b;
             }
         }.setType(AbstractMonster.EnemyType.ELITE).addRewards(true, (room)->{
 
@@ -127,5 +124,13 @@ public class CharacterHelpEvent  extends PhasedEvent {
 
         pixmap.dispose();
 
+    }
+
+    @Override
+    public void enterCombat() {
+        super.enterCombat();
+        for (AbstractMonster m : AbstractDungeon.getMonsters().monsters) {
+            AbstractDungeon.actionManager.addToTop(new LoseHPAction(m, AbstractDungeon.player, m.currentHealth/4));
+        }
     }
 }

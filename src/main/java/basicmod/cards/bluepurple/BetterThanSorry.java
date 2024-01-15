@@ -26,7 +26,6 @@ public class BetterThanSorry extends DualCard {
 
     private static final int SAFETY = 2;
 
-
     public BetterThanSorry() {
         super(cardInfo, CardColor.BLUE, CardColor.PURPLE); //change this to super(cardInfo, true); for updating description
         setMagic(SAFETY);

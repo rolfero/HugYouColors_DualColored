@@ -6,6 +6,7 @@
   "version": "${project.version}",
   "sts_version": "${SlayTheSpire.version}",
   "mts_version": "${ModTheSpire.version}",
+  "credits": "\n Special thanks to FrostPrime for being unpaid QA when I put him and his chat through the first, buggy, experience. Sorry frost.",
   "dependencies": ["basemod", "stslib"],
   "update_json": ""
 }
