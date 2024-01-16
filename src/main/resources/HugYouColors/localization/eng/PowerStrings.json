@@ -44,7 +44,7 @@
   "${modID}:BionicPower": {
     "NAME": "Bionic",
     "DESCRIPTIONS": [
-      "Strength and Dexterity affect your Orbs. Focus affect cards damage and Block."
+      "Strength increases your orbs damage. Dexterity increases your Orbs Block. Focus increases your cards damage and Block."
     ]
   },
   "${modID}:ProductivityPower": {

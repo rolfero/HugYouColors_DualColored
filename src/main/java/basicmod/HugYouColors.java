@@ -9,6 +9,7 @@ import basemod.interfaces.*;
 import basicmod.cards.DualCard;
 import basicmod.dynamicvariables.HalfDamageVariable;
 import basicmod.events.CharacterHelpEvent;
+import basicmod.patches.PlayerOrbPatch;
 import basicmod.ui.SubColorMenu;
 import basicmod.util.GeneralUtils;
 import basicmod.util.KeywordInfo;
@@ -76,19 +77,16 @@ public class HugYouColors implements
     }
 
     //TODO: Can I strike through or otherwise remove the None: Dark part of Accord?
-    public static boolean newGameStarted = false;
 
     @Override
     public void receiveStartGame() {
         if (HugYouColors.getActiveConfig()) {
-            if (!newGameStarted) {
+            if (!PlayerOrbPatch.PlayerOrbFixPatch.didSetOrbs.get(AbstractDungeon.player)) {
                 int newOrbs = (AbstractDungeon.player.masterMaxOrbs + HugYouColors.playerSecondary.masterMaxOrbs + 1) / 2;
                 AbstractDungeon.player.masterMaxOrbs = Math.max(newOrbs, AbstractDungeon.player.masterMaxOrbs);
             }
-
-            newGameStarted = true;
+            PlayerOrbPatch.PlayerOrbFixPatch.didSetOrbs.set(AbstractDungeon.player, true);
         }
-
     }
 
     public static class Enums {
@@ -560,12 +558,12 @@ public class HugYouColors implements
 
             @Override
             public Boolean onSave() {
-                return newGameStarted;
+                return PlayerOrbPatch.PlayerOrbFixPatch.didSetOrbs.get(AbstractDungeon.player);
             }
 
             @Override
             public void onLoad(Boolean save) {
-                newGameStarted = save != null && save;
+                PlayerOrbPatch.PlayerOrbFixPatch.didSetOrbs.set(AbstractDungeon.player, save != null && save);
             }
 
         });
