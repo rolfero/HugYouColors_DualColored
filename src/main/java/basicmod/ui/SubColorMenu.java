@@ -68,6 +68,14 @@ public class SubColorMenu {
 
     public boolean isMainChosenCharacter(int i) {
         if (i == 0) return false;
+
+        if (this.characterSelectScreen instanceof CustomCharacterSelectScreen) {
+            int optionsPerIndex = ReflectionHacks.getPrivate(this.characterSelectScreen, CustomCharacterSelectScreen.class, "optionsPerIndex");
+            int optionsIndex = ReflectionHacks.getPrivate(this.characterSelectScreen, CustomCharacterSelectScreen.class, "optionsIndex");
+
+            if (i < optionsIndex || i > optionsIndex+optionsPerIndex) return false;
+        }
+
         return getCharacterOptionList(characterSelectScreen).get(i-1).selected;
     }
 

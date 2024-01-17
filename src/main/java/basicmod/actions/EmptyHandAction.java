@@ -19,6 +19,7 @@ public class EmptyHandAction extends AbstractGameAction {
     public EmptyHandAction(AbstractCreature source, int amt) {
         this.setValues(AbstractDungeon.player, source, amt);
         this.actionType = ActionType.CARD_MANIPULATION;
+        this.duration = 0.5F;
     }
 
     @Override
@@ -26,7 +27,6 @@ public class EmptyHandAction extends AbstractGameAction {
         if (this.duration == 0.5F) {
             AbstractDungeon.handCardSelectScreen.open(TEXT[0], this.amount, true, true);
             this.addToBot(new WaitAction(0.25F));
-            this.tickDuration();
         } else {
             if (!AbstractDungeon.handCardSelectScreen.wereCardsRetrieved) {
                 if (!AbstractDungeon.handCardSelectScreen.selectedCards.group.isEmpty()) {
@@ -41,9 +41,8 @@ public class EmptyHandAction extends AbstractGameAction {
 
                 AbstractDungeon.handCardSelectScreen.wereCardsRetrieved = true;
             }
-
-            this.tickDuration();
         }
+        this.tickDuration();
     }
 
 }
