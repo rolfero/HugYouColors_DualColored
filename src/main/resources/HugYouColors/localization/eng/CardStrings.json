@@ -27,7 +27,7 @@
   },
   "${modID}:OpportunityStrike": {
     "NAME": "Opportunity Strike",
-    "DESCRIPTION": "Deal !D! damage. NL Gain !B! Block. NL Ethereal."
+    "DESCRIPTION": "Ethereal. NL Deal !D! damage. NL Gain !B! Block."
   },
   "${modID}:KnifeArtisan": {
     "NAME": "Knife Artisan",
@@ -107,7 +107,7 @@
   },
   "${modID}:ColdSphere": {
     "NAME": "Cold Sphere",
-    "DESCRIPTION": "{@@}Lose !M! HP. NL Gain an Orb Slot. NL Channel !M! Frost. {!Upgrades!|0=NL Ethereal.}"
+    "DESCRIPTION": "{@@}{!Upgrades!|0=Ethereal. NL }Lose !M! HP. NL Gain an Orb Slot. NL Channel !M! Frost."
   },
   "${modID}:Bionic": {
     "NAME": "Bionic",
@@ -127,7 +127,7 @@
   },
   "${modID}:Productivity": {
     "NAME": "Productivity",
-    "DESCRIPTION": "{@@}{!Upgrades!|0=The first time|1=Whenever} you play a Power card{!Upgrades!|0= each turn}, Exhaust a{!Upgrades!|0= random} card and gain !M! Focus. NL Ethereal."
+    "DESCRIPTION": "{@@}Ethereal. NL {!Upgrades!|0=The first time|1=Whenever} you play a Power card{!Upgrades!|0= each turn}, Exhaust a{!Upgrades!|0= random} card and gain !M! Focus."
   },
   "${modID}:Shielded": {
     "NAME": "Shielded",
@@ -175,7 +175,7 @@
   },
   "${modID}:Soulforged": {
     "NAME": "Soulforged",
-    "DESCRIPTION": "Deal !D! damage. NL Deals twice as much damage for the rest of the combat. NL Ethereal."
+    "DESCRIPTION": "Ethereal. NL Deal !D! damage. NL Deals twice as much damage for the rest of the combat."
   },
   "${modID}:HiddenEye": {
     "NAME": "Hidden Eye",
@@ -191,7 +191,7 @@
   },
   "${modID}:Load": {
     "NAME": "Load",
-    "DESCRIPTION": "Deal !D! damage. NL Retain."
+    "DESCRIPTION": "Retain. NL Deal !D! damage."
   },
   "${modID}:Memento": {
     "NAME": "Memento",
@@ -299,7 +299,7 @@
   },
   "${modID}:Import": {
     "NAME": "Import",
-    "DESCRIPTION": "{@@}Choose 1 of 3 Powers of any color to add to your hand.{!Upgrades!|1= NL It costs 0 this turn.} NL Exhaust."
+    "DESCRIPTION": "{@@}Choose 1 of 3 Powers of any color to add to your hand. It Retains{!Upgrades!|1= and costs 0} this turn. NL Exhaust."
   },
   "${modID}:TheSkyIsTheLimit": {
     "NAME": "The Sky Is The Limit",
@@ -327,7 +327,7 @@
   },
   "${modID}:Slipping": {
     "NAME": "Slipping",
-    "DESCRIPTION": "{@@}At the start of your turn, gain !M! Dexterity. NL This card starts in your discard pile.{!Upgrades!|0= NL Ethereal.}"
+    "DESCRIPTION": "{@@}{!Upgrades!|0=Ethereal. NL }At the start of your turn, gain !M! Dexterity. NL This card starts in your discard pile."
   },
   "${modID}:Archeology": {
     "NAME": "Archeology",
