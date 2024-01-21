@@ -435,7 +435,7 @@ public class HugYouColors implements
         //Set up the mod information displayed in the in-game mods menu.
         //The information used is taken from your pom.xml file.
 
-        BaseMod.addEvent(new AddEventParams.Builder(CharacterHelpEvent.ID, CharacterHelpEvent.class).endsWithRewardsUI(true).create());
+        BaseMod.addEvent(new AddEventParams.Builder(CharacterHelpEvent.ID, CharacterHelpEvent.class).endsWithRewardsUI(true).spawnCondition(HugYouColors::getActiveConfig).create());
 
         secondaryCommonCardPool = new CardGroup(CardGroup.CardGroupType.CARD_POOL);
         secondaryUncommonCardPool = new CardGroup(CardGroup.CardGroupType.CARD_POOL);
