@@ -17,7 +17,7 @@ import java.util.function.BiFunction;
 import static hugyoutwentydualcolors.HugYouColors.makeID;
 import static hugyoutwentydualcolors.util.TextureLoader.getCardTextureString;
 
-
+@SuppressWarnings("unused")
 public abstract class BaseCard extends CustomCard {
     final private static Map<String, DynamicVariable> customVars = new HashMap<>();
 
@@ -240,13 +240,14 @@ public abstract class BaseCard extends CustomCard {
         this.costUpgrade = costUpgrade;
         this.upgradeCost = true;
     }
-    @SuppressWarnings("SameParameterValue")
+
     protected final void setExhaust(boolean exhaust) { this.setExhaust(exhaust, exhaust); }
-    @SuppressWarnings("SameParameterValue")
+
     protected final void setEthereal(boolean ethereal) { this.setEthereal(ethereal, ethereal); }
-    
+
+    @SuppressWarnings("unused")
     protected final void setInnate(boolean innate) {this.setInnate(innate, innate); }
-    @SuppressWarnings("SameParameterValue")
+
     protected final void setSelfRetain(boolean retain) {this.setSelfRetain(retain, retain); }
     protected final void setExhaust(boolean baseExhaust, boolean upgExhaust)
     {
