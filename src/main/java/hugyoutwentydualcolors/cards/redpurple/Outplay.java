@@ -54,7 +54,7 @@ public class Outplay extends DualCard {
             }
         });
 
-        addToBot(new ApplyPowerAction(m, p, new MarkPower(p, magicNumber), magicNumber));
+        addToBot(new ApplyPowerAction(m, p, new MarkPower(m, magicNumber), magicNumber));
 
     }
 }

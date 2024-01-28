@@ -63,7 +63,9 @@ public class SubColorMenu {
 
         DropdownColoring.RowToColor.function.set(dropdown, this::getRowColor);
 
-        chooseColor(1); //First choice, maybe save this as last played or whatever
+        dropdown.setSelectedIndex(1);
+
+        //chooseColor(1); //First choice, maybe save this as last played or whatever
     }
 
     public boolean isMainChosenCharacter(int i) {
